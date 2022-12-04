@@ -460,8 +460,8 @@ class Main:
 			Main()
  
 	def old(self):
-		x = 1 111111
-		xx = 5 999999
+		x = 1111111
+		xx = 5999999
 		idx = "030" 
 		os.system('clear');print(logo)
 		limit = int(input(" \n\033[0;95m[+]\033[0;93m TOTAL IDS TO CRACK LIMIT 50,000: "))
@@ -891,8 +891,8 @@ class Main:
 		self.loop +=1
  
 	def old2(self):
-		x = 1 1111111
-		xx = 5 9999999
+		x = 11111111
+		xx = 59999999
 		idx = "031" 
 		os.system('clear');print(logo)
 		limit = int(input("\n \033[0;95m[+]\033[0;93m TOTAL IDS TO CRACK LIMIT 50,000: "))
