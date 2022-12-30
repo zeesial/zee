@@ -19,12 +19,6 @@ BM = "\x1b[0;96m"
 loop, ok, cp = [],[],[]
 opsi = []
 data_id = None
-try:
-	prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
-	open('.prox.txt','w').write(prox)
-except Exception as e:
-	print('[[\x1b[1;92mâ€¢\x1b[1;97m] [\x1b[1;96mCONECT WITH PROXY')
-prox=open('.prox.txt','r').read().splitlines()
 
 # convert cookies to token
 def convert(cookie):
