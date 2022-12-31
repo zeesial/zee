@@ -52,11 +52,12 @@ logo=("""\033[1;37m
   \033[1;34m  zz            ZZZ      ZZ       ZZ\033[1;34m
  \033[1;34m zz              ZZZ      ZZ       ZZ\033[1;34m
 \033[1;34mZZZZZZZZZZ        ZZZ      ZZ       ZZ\033[1;34m
-----------------------------------------------
+
+\033[1;31mxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\033[1;37m
  Author    : ZIA JEE
  Type type : Personnal Use
  Version   : 1.0.0
-----------------------------------------------
+\033[1;31mxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\033[1;37m
  
 \033[1;37m----------------------------------------------""")
 def linex():
@@ -209,7 +210,7 @@ def menu():
         #       chk()
                 x = ("sex")
                 if x == ("sex"):
-                        print(' [1] Random gmail crack\n [0] Exit menu')
+                        print(' [1] GMAIL Cloning\n [0] Exit menu')
                         linex()
                         xd=input(' Choose an option: ')
                         if xd in ['9','09']:
