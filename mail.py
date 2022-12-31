@@ -21,17 +21,17 @@ for xd in range(10000):
         b=random.choice(['6','7','8','9','10','11','12','13'])
         c=f' TL-tl; {str(gt)}'
         g='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
-        h=random.randrange(73,100)
+        h=random.randrange(100,110)
         i='0'
         j=random.randrange(4200,4900)
         k=random.randrange(40,150)
         l='Mobile Safari/537.36'
         uaku2=f'{aa} {b}; {c}) {g}{h}.{i}.{j}.{k} {l}'
-        ugen.append(uaku2)
+        ugen.append('Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36')
 for agent in range(10000):
-        aa='Mozilla/5.0 (Linux; Android 6.0.1;'
+        aa='Mozilla/5.0 (Linux; Android'
         b=random.choice(['6','7','8','9','10','11','12'])
-        c='en-us; 10; T-Mobile myTouch 3G Slide Build/'
+        c='en-us; 10; Realme C3/'
         d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
         e=random.randrange(1, 999)
         f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
@@ -41,8 +41,8 @@ for agent in range(10000):
         j=random.randrange(4200,4900)
         k=random.randrange(40,150)
         l='Mobile Safari/533.1'
-        fullagnt=(f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}')
-        ugen.append(fullagnt)
+        fullagnt=(f'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36')
+        ugen.append('Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36')
 logo=("""\033[1;37m
 \033[1;34m ZZZZZZZZZZ       ZZZ         ZZZZ\033[1;34m
  \033[1;34m        zz       ZZZ        zZ   Zz\033[1;34m
