@@ -54,9 +54,9 @@ logo=("""\033[1;37m
 \033[1;34mZZZZZZZZZZ        ZZZ      ZZ       ZZ\033[1;34m
 
 \033[1;31mxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\033[1;37m
- Author    : ZIA JEE
- Type type : Personnal Use
- Version   : 1.0.0
+ \033[1;35mAuthor    : ZIA JEE\033[1;35m
+ \033[1;35mType type : Personnal Use\033[1;35m
+\033[1;35m Version   : 1.0.0\033[1;35m
 \033[1;31mxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\033[1;37m
  
 \033[1;37m----------------------------------------------""")
