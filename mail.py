@@ -209,10 +209,10 @@ def public():
         #       chk()
                 x = ("sex")
                 if x == ("sex"):
-                        print(' [1] File cloning\n [2] Create ids file\n [3] Public cloning\n [4] Random number cloning\n [5] Random gmail crack\n [6] WhatsApp Group (join)\n [7] Download Vpn\n [8] How To Use Video\n [0] Exit menu')
+                        print(' [1] Random gmail crack\n [0] Exit menu')
                         linex()
                         xd=input(' Choose an option: ')
-                        if xd in ['1','01']:
+                        if xd in ['5','05']:
                                 clear()
                                 print(' Put file example:  /sdcard/File.txt  etc..')
                                 linex()
@@ -281,14 +281,14 @@ def public():
                                 linex()
                                 x=input(' Choose: ')
                                 if x in ['1','01']:
-                                        pak()
+                                        gmail()
                                 elif x in ['2','02']:
                                         bd()
                                 elif x in ['3','03']:
                                         gmail()
                                 else:
                                         menu()
-                        elif xd in ['5','05']:
+                        elif xd in ['1','01']:
                                 gmail()
                         elif xd in ['6','06']:
                                 wx=('Dsj9JMWoixk4Qsje0Ng3nA')
