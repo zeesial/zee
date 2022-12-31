@@ -44,14 +44,14 @@ for agent in range(10000):
         fullagnt=(f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}')
         ugen.append(fullagnt)
 logo=("""\033[1;37m
- ZZZZZZZZZZ       ZZZ         ZZZZ
-         zz       ZZZ        zZ   Zz
-        zz                  ZZ     ZZ
-       zz         ZZZ      ZZ       ZZ
-      zz          ZZZ      ZZZZZZZZZZZ 
-    zz            ZZZ      ZZ       ZZ
-  zz              ZZZ      ZZ       ZZ
-ZZZZZZZZZZ        ZZZ      ZZ       ZZ
+\033[1;34m ZZZZZZZZZZ       ZZZ         ZZZZ\033[1;34m
+ \033[1;34m        zz       ZZZ        zZ   Zz\033[1;34m
+  \033[1;34m      zz                  ZZ     ZZ\033[1;34m
+   \033[1;34m    zz         ZZZ      ZZ       ZZ\033[1;34m
+    \033[1;34m  zz          ZZZ      ZZZZZZZZZZZ \033[1;34m
+  \033[1;34m  zz            ZZZ      ZZ       ZZ\033[1;34m
+ \033[1;34m zz              ZZZ      ZZ       ZZ\033[1;34m
+\033[1;34mZZZZZZZZZZ        ZZZ      ZZ       ZZ\033[1;34m
 ----------------------------------------------
  Author    : IMTIAZ LKING
  Github    : AKING110
