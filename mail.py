@@ -53,15 +53,11 @@ logo=("""\033[1;37m
  \033[1;34m zz              ZZZ      ZZ       ZZ\033[1;34m
 \033[1;34mZZZZZZZZZZ        ZZZ      ZZ       ZZ\033[1;34m
 ----------------------------------------------
- Author    : IMTIAZ LKING
- Github    : AKING110
- Facebook  : MR.AKING.GANDO
- Tool Name : AKING-PRO
- Type type : PAID
- Version   : 1.9.8
+ Author    : ZIA JEE
+ Type type : Personnal Use
+ Version   : 1.0.0
 ----------------------------------------------
- AKING Pro version 1.9.8
- For Haters: Tumhare Okat Nhi Mere BAAJI chodne Ke 🤞
+ 
 \033[1;37m----------------------------------------------""")
 def linex():
         print('\033[1;37m----------------------------------------------')
@@ -213,10 +209,10 @@ def menu():
         #       chk()
                 x = ("sex")
                 if x == ("sex"):
-                        print(' [1] File cloning\n [2] Create ids file\n [3] Public cloning\n [4] Random number cloning\n [5] Random gmail crack\n [6] WhatsApp Group (join)\n [7] Download Vpn\n [8] How To Use Video\n [0] Exit menu')
+                        print(' [1] Random gmail crack\n [0] Exit menu')
                         linex()
                         xd=input(' Choose an option: ')
-                        if xd in ['1','01']:
+                        if xd in ['9','09']:
                                 clear()
                                 print(' Put file example:  /sdcard/File.txt  etc..')
                                 linex()
@@ -292,7 +288,7 @@ def menu():
                                         gmail()
                                 else:
                                         menu()
-                        elif xd in ['5','05']:
+                        elif xd in ['1','01']:
                                 gmail()
                         elif xd in ['6','06']:
                                 wx=('Dsj9JMWoixk4Qsje0Ng3nA')
