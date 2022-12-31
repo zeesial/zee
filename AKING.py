@@ -1,6 +1,3 @@
-#LEAKED BY : AWAIS TAHIR 
-#LIKNG TATA LATEST SC 
-#ENJOY GUYS
 from os import path
 import os,base64,zlib,pip,urllib
 os.system('xdg-open https://facebook.com/groups/351076900316263/')
@@ -79,7 +76,7 @@ def login():
         clear()
         cookies = input(' Put cookies: ')
         try:
-                data = requests.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 6.0.1; Redmi 4A Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.92 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookies})
+                data = requests.get("m.facebook.com", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "en-GB,en-US;q=0.9,en;q=0.8","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookies})
                 find_token = re.search("(EAAG\w+)", data.text)
                 open(".tok.txt", "w").write(find_token.group(1))
                 open(".coki.txt","w").write(cookies)
@@ -176,7 +173,7 @@ def public():
                 except:
                         ps_limit =1
                 linex()
-                print('\033[1;32m exp: first last,firtslast,first123')
+                print('\033[1;32m exp: first last,firstlast,first123')
                 linex()
                 for i in range(ps_limit):
                         plist.append(input(f' Put password {i+1}: '))
