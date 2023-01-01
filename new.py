@@ -555,7 +555,6 @@ xxxxx=("GT-1015","GT-1020","GT-1030","GT-1035","GT-1040","GT-1045","GT-1050","GT
 def api(ids,names,passlist):
                 try:
                         global loop,oks,cps
-        sys.stdout.write('\r\r\033[1;37m [Zee-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
         session = requests.Session()
         try:
                 first = names.split(' ')[0]
@@ -600,7 +599,6 @@ def api(ids,names,passlist):
 def api1(ids,names,passlist):
                 try:
                         global loop,oks,cps
-        sys.stdout.write('\r\r\033[1;37m [Zee-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
         session = requests.Session()
         try:
                 first = names.split(' ')[0]
@@ -641,7 +639,6 @@ def api1(ids,names,passlist):
 def rndm(ids,passlist):
                 try:
                         global ok,loop
-                        sys.stdout.write('\r\r\033[1;37m [ZEE-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
                         for pas in passlist:
                                 application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(111,555))
                                 application_version_code=str(random.randint(000000000,999999999))
