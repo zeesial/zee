@@ -456,7 +456,7 @@ class Main:
  
 	def old(self):
 		os.system('rm -rf .re.txt')
-                clear()
+                os.system('clear')
 		 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
                 linex()
                 first = input(' Put first name: ')
