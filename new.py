@@ -445,7 +445,7 @@ class Main:
 		if UZAIR in ["3", "03"]:
 			os.system("python2 mrd1.py")
 		if UZAIR in ["4", "04"]:
-			self.old()
+			gmail()
 		if UZAIR in ["5", "05"]:
 			self.old2()
 			exit()
