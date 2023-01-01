@@ -80,6 +80,9 @@ cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 # CLEAR
 def clear():
 	os.system('clear')
+#Lines
+def linex():
+        print('\033[1;37m----------------------------------------------')
 # BACK
 def back():
 	login()
@@ -450,8 +453,7 @@ class Main:
 			print (" Select Correctly ")
 			time.sleep(1)
 			Main()
- def linex():
-        print('\033[1;37m----------------------------------------------')
+ 
 	def old(self):
 		os.system('rm -rf .re.txt')
                 clear()
