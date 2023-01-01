@@ -759,11 +759,10 @@ def rndm(ids,passlist):
                                 else:
                                         continue
                         loop+=1
-if len(sys.argv) == 2:
-	if sys.argv[1] == "--help" or sys.argv[1] == "-h":
-		helpnote()
-	else:
-		Main()
+except requests.exceptions.ConnectionError:
+                        time.sleep(10)
+                except Exception as e:
+                        pass
  
 try:Main()
 except Exception as e:exit(str(e))
