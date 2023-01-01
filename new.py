@@ -445,7 +445,7 @@ class Main:
 		if UZAIR in ["3", "03"]:
 			os.system("python2 mrd1.py")
 		if UZAIR in ["4", "04"]:
-			gmail()
+			self.old2()
 		if UZAIR in ["5", "05"]:
 			self.old2()
 			exit()
@@ -456,7 +456,7 @@ class Main:
  
 		
  
-	def gmail():
+	def old2(self):
                 os.system('rm -rf .re.txt')
                 clear()
                 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
