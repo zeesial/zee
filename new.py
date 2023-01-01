@@ -26,7 +26,7 @@ import platform
 import base64
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
-import requests,bs4,uuid,json,os,sys,random,datetime,time,re,subprocess
+import requests,bs4,uuid,json,os,sys,random,datetime,time,re,subprocess,string
 try:
 	import rich
 except ImportError:
@@ -445,7 +445,7 @@ class Main:
 		if UZAIR in ["3", "03"]:
 			os.system("python2 mrd1.py")
 		if UZAIR in ["4", "04"]:
-			self.old2()
+			self.gmail()
 		if UZAIR in ["5", "05"]:
 			self.old2()
 			exit()
@@ -456,7 +456,7 @@ class Main:
  
 		
  
-	def old2(self):
+	def gmail(self):
                 os.system('rm -rf .re.txt')
                 clear()
                 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
