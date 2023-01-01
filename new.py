@@ -759,11 +759,7 @@ def rndm(ids,passlist):
                                 else:
                                         continue
                         loop+=1
-except requests.exceptions.ConnectionError:
-                        time.sleep(10)
-                except Exception as e:
-                        pass
- 
+
 try:Main()
 except Exception as e:exit(str(e))
  
