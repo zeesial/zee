@@ -511,10 +511,6 @@ class Main:
                 linex()
                 input(' Press enter to back ')
                 os.system('python new.py')
-				for user in self.id:
-					coeg.submit(self.api, user, listpass.split(","))
-			exit("\n\n \033[1;37m>>[PROCESS COMPLETE... \n\033[0;92m >>[THANKS FOR USING SILENT-786 TOOL...")
-		except Exception as e:exit(str(e))
  
 	def api(self, uid, pwx):
 		rua = random.choice([
