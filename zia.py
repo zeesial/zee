@@ -143,46 +143,7 @@ bxd = ""
 bumper = id+bxd+xp
 myweb2 = requests.get(xny).text
 
-def qsbuy():
-        try:
-                os.system('clear')
-                print(logo)
-                x = requests.get('https://raw.githubusercontent.com/hop09/libraries/main/version.txt').text
-                if str("upppdate") in update:
-                        os.system('clear')
-                        exit('script is in update / maintanance be patient ')
-                elif str("res-sseett") in update:
-                        os.system('')
-                        os.system('')
-                        os.system('')
-                        exit('Dont Try To Bypass')
-                elif bumper in myweb2:
-                        main()
-                else:
-                        os.system("clear");print(logo)
-                        print(f"{lr}   Your Device License Key Is Not Approved{s}")
-                        print(50*"=")
-                        print(f"{rc} Key : {bumper}{s}")
-                        print(50*"=")
-                        print(f" Note : Tool is Paid & We Accept All Types Of PAyment  Method . If There was Fb Update & Tool Wasnt Run Then We Are Not Responsible For All Of This . We Will Try  To Update Script Every Time But It Took Day ")
-                        print("\n Baray Mehrbani Tool Apni Zimadare May Buy Kary Lehaza May Apko Force Ni Kar Raha ! Baqe Tool Har 2 sy 3 din bad update hgaya kryga ")
-                        print(50*"=")
-                        print(f" 15-Days Price : 350")
-                        print(f" 1-Month Price : 500")
-                        print(50*"=")
-                        input("[Press Enter To Send Key To Admin]")
-                        os.system(f"termux-open-url https://wa.me/+923030362621?text={bumper}")
-                        qsbuy()
-        except requests.exceptions.ConnectionError:
-                exit(' No internet connection ..')
 
-def rrrr():
-        if bumper in myweb2:
-                pass
-        else:
-                qsbuy()
-def xchker():
-    pass
 def main():
         xchker()
         os.system('rm -rf ...txt')
