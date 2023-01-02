@@ -390,7 +390,7 @@ class crack_main():
                                         brand_name_ = "Infinix"
                                         width_ = "720"
                                         height_ = "1280"
-                                uas = 'Dalvik/2.1.0 (Linux; U; Android 10.0.0; Infinix Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/Infinix;FBBD/Infinix;FBDV/Infinix;FBSV/10.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width=720,height=1280};]'
+                                uas = 'Dalvik/2.1.0 (Linux; U; Android '+str(random.randint(8,12))+'.0.0; Infinix Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/Infinix;FBBD/Infinix;FBDV/Infinix;FBSV/'+str(random.randint(8,12))+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width=720,height=1280};]'
                                 fak_tn="153779441997719|n2YEBqamkrdDYJBUkjxmNzuZS5c","300340197101744|lGCTj7yrAEvAWivDSvcBOJXu-Lw"
                                 adid = str(uuid.uuid4())
                                 abhi = "779441997719|n2YE"
