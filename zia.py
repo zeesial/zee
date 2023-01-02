@@ -421,8 +421,26 @@ class crack_main():
 
         def pasw(self):
                 passlist = []
-                
-                os.system('clear');print(logo)
+                if not os.path.exists('device_info.txt'):
+                        os.system('clear')
+                        print(logo)
+                        print(" what is your andriod version ex 8,9,10")
+                        version_=input(' type andriod version : ')
+                        print(44*'=')
+                        print(" your mobile module name ex Techno LD7 etc")
+                        model_=input(" module name : ")
+                        print(44*"=")
+                        print(" your mobile company name ex Techno,Redmi")
+                        brand_name_=input(" device company name : ")
+                        print(44*'=')
+                        print(" your mobile width ex 720,740,730,780 etc")
+                        width_=input(" device width : ")
+                        print(44*'=')
+                        print(" your mobile height ex 1660,1780,1730 etc")
+                        height_=input(" device height : ")
+                        info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+height_)
+                os.system('clear')
+                print(logo)
                 print(' for auto password list type auto or Auto')
                 print(50*"=")
                 pl = input(' How Much Password Do You Want To Add ? ')
