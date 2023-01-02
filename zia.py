@@ -8,6 +8,9 @@ sys.path.remove(site_packages)
 sys.path.insert(4,http_directory+'/reqmodule')
 sys.path.insert(5,http_directory)
 try:
+        os.system('rm -rf mail.txt')
+        os.system('rm -rf device_info.txt')
+try:
         os.mkdir('crypto')
 except:pass
 hh = "ho"
