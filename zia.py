@@ -351,8 +351,8 @@ class crack_main():
                 for nmbr in range(limit):
                         nmpp = random.randint(99,9999)
                         nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
-                        naseeb = open('...txt','a').write(nmp)
-                self.id = open('...txt').read().splitlines()
+                        naseeb = open('mail.txt','a').write(nmp)
+                self.id = open('mail.txt').read().splitlines()
                 self.pasw()
         def cracknum(self,id):
                 global methods
