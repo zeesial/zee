@@ -734,5 +734,5 @@ if not os.path.exists('.fam'):
         qsbuy()
 else:
         qsbuy()
-'''
+
 main()
