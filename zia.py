@@ -133,17 +133,6 @@ total=[]
 clone_type=[]
 android_models = []
 
-xny = zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7/J,\xd7K\xcf,\xc9(M*-N-J\xce\xcf+I\xcd+\xd1K\xce\xcf\xd5OKK)\xcb1442\xd0O,\xd0\xcfM\xcc\xcc\xd3\xcfJ\x03\x001"\x13\xc6')
-update = requests.get(xny).text
-uuidd = str(os.geteuid()) + str(os.getlogin()) + str(os.getuid())
-id = "".join(uuidd).replace("_","").replace("360","AHS").replace("u","9").replace("a","A")
-plat = platform.version()[14:][:21][::-1].upper()+platform.release()[5:][::-1].upper()+platform.version()[:8]
-xp = plat.replace(' ', '').replace('-', '').replace('#', '').replace(':', '').replace('.', '').replace(')', '').replace('(', '').replace('?', '').replace('=', '').replace('+', '').replace(';', '').replace('*', '').replace('_', '').replace('?', '').replace('  ', '')
-bxd = ""
-bumper = id+bxd+xp
-myweb2 = requests.get(xny).text
-
-
 def main():
         xchker()
         os.system('rm -rf ...txt')
