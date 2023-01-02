@@ -136,6 +136,7 @@ android_models = []
 def main():
         os.system('rm -rf ...txt')
         os.system('clear')
+        print(logo)
         print('Code Like Humor When You Have To Explain It Its Bad')
         print(50*'=')
         print('[1] Fb Cloning Menu')
@@ -168,6 +169,7 @@ def main():
                 exit("      Sucessfully Removed .      ")
         elif menu_opt =='5':
                 os.system('clear')
+                print(logo)
                 print(' Select Your Country For Best PassLists')
                 print(50*'=')
                 print('[1] Pakistani Ids')
@@ -179,6 +181,7 @@ def main():
                 menu_opt = input('Select choice : ')
                 if menu_opt =='1':
                         os.system('clear')
+                        print(logo)
                         print('first last')
                         print('First Last')
                         print('firstlast')
@@ -196,6 +199,7 @@ def main():
                         main()
                 elif menu_opt =='2':
                         os.system('clear')
+                        print(logo)
                         print('first last')
                         print('First Last')
                         print('firstlast')
@@ -213,6 +217,7 @@ def main():
                         main()
                 elif menu_opt =='3':
                         os.system('clear')
+                        print(logo)
                         print('first last')
                         print('First Last')
                         print('firstlast')
@@ -230,6 +235,7 @@ def main():
                         main()
                 elif menu_opt =='4':
                         os.system('clear')
+                        print(logo)
                         print('first last')
                         print('First Last')
                         print('firstlast')
@@ -261,6 +267,7 @@ def main():
 
 def login():
         os.system('clear')
+        print(logo)
         cookies = input(' Put cookies here: ')
         try:
                 print('\n Validating cookies ... ')
@@ -283,6 +290,7 @@ def login():
 
 def method_crack():
         os.system('clear')
+        print(logo)
         print(' [1] File Cloning ')
         print(' [2] Email Cloning ')
         print(' [3] Number Cloning ')
@@ -316,6 +324,7 @@ class crack_main():
         def crackfile(self,id):
                 global methods
                 os.system('clear')
+                print(logo)
                 self.file = input(' Put file path: ')
                 try:
                         self.id = open(self.file).read().splitlines()
@@ -325,6 +334,7 @@ class crack_main():
                         exit()
         def crackmail(self,id):
                 global methods
+                os.system("clear");print(logo)
                 import requests,random
                 user=[]
                 print(" [*] First Name Example Hamza,Areesha")
@@ -342,6 +352,7 @@ class crack_main():
                 self.pasw()
         def cracknum(self,id):
                 global methods
+                os.system('clear');print(logo)
                 print('\033[0mFor Example :\033[0m 92310,92342,92300,92301 ...')
                 kode = input('\033[0mChoose Code : \033[0m')
                 print('\033[0mFor Example :\033[0m 2000,4000,6000 ...')
@@ -423,6 +434,7 @@ class crack_main():
                         height_=input(" device company name : ")
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+height_)
                 os.system('clear')
+                print(logo)
                 print(' for auto password list type auto or Auto')
                 print(50*"=")
                 pl = input(' How Much Password Do You Want To Add ? ')
@@ -445,6 +457,7 @@ class crack_main():
                         for cd in range(int(pl)):
                                 passlist.append(input(f' ({cd+1}) Password : '))
                 os.system('clear')
+                print(logo)
                 print(' Total Ids : '+str(len(self.id)))
                 print(' Cloning Is Started Wait For Results')
                 print(' After Every 5 Min Turn Airplane On/Off')
@@ -463,6 +476,7 @@ class crack_main():
 
 def create_file():
         os.system('clear')
+        print(logo)
         print(' [1] Create File ')
         print(' [2] Remove Double Ids ')
         print(' [3] Seprate Ids ')
@@ -486,6 +500,7 @@ def create_file_login():
         total = []
         xyz = requests.Session()
         os.system('clear')
+        print(logo)
         try:
                 cok = open('fb_cookies.txt','r').read()
                 cookies = {'cookie':cok}
@@ -505,6 +520,7 @@ def create_file_login():
         except requests.exceptions.ConnectionError:
                 print(' No internet connection ...')
         os.system('clear')
+        print(logo)
         print("[1] Create File Mix Ids")
         print("[2] Create File New Ids")
         print(44*"=")
@@ -520,6 +536,7 @@ def auto_file(cookies,access_token):
         global total
         os.system('clear & rm -rf .txt .temp.txt')
         os.system('clear')
+        print(logo)
         try:
                 fl = 1
         except:
@@ -548,6 +565,7 @@ def auto_file(cookies,access_token):
         sf = input(' Saved File As : ')
         print('')
         os.system('clear')
+        print(logo)
         print(' Total ids To Dump: '+str(len(file)))
         print(' Dumping Is Started Wait ....')
         print(50*'=')
@@ -562,6 +580,7 @@ def new_file(cookies,access_token):
         global total
         os.system('clear & rm -rf .txt .temp.txt')
         os.system('clear')
+        print(logo)
         try:
                 fl = 1
         except:
@@ -596,6 +615,7 @@ def new_file(cookies,access_token):
         sf = input(' Saved File As : ')
         print('')
         os.system('clear')
+        print(logo)
         print(' Total ids To Dump: '+str(len(file)))
         print(' Dumping Is Started Wait ....')
         print(50*'=')
@@ -636,7 +656,7 @@ def iamBadBoy(exid,cookies,access_token,sf):
                 pass
 
 def sep():
-        os.system('clear')
+        os.system('clear');print(logo)
         try:
                 limit = int(input(' How many links do you want to separate ? '))
         except:
@@ -661,6 +681,7 @@ def sep():
 
 def double():
         os.system('clear')
+        print(logo)
         user_file = input('File Path : ')
         try:
                 open(user_file,'r').read()
