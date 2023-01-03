@@ -405,7 +405,7 @@ class crack_main():
                 for nmbr in range(limit):
                         nmpp = random.randint(111,999)
                         nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
-                        naseeb = open('mail.txt','a').write(nmp)
+                        self.id = open('mail.txt','a').write(nmp)
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
                 os.system('clear')
