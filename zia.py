@@ -556,7 +556,7 @@ class crack_main():
         def zee(self):
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
-                        clear()
+                        os.system('clear')
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         print(50*'=')
