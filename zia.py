@@ -424,7 +424,7 @@ class crack_main():
                 print(' After Every 5 Min Turn Airplane On/Off')
                 print(50*'=')
                 with ThreadPool(max_workers=30) as formSubmit:
-                                iid,name = user.split('|')
+                                iid,names = user.split('|')
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
