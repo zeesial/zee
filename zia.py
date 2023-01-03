@@ -441,9 +441,9 @@ class crack_main():
                                 break
                         else:
                                 continue
-                loop+=1
-        except Exception as e:
-                pass
+                 loop+=1
+         except Exception as e:
+                 pass
                         #print(e)
 
         def pasw(self):
