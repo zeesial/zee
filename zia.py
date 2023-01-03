@@ -421,7 +421,7 @@ class crack_main():
                         nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
                         naseeb = open('mail.txt','a').write(nmp)
                 self.id = open('mail.txt').read().splitlines()
-                self.pasw()
+                self.zee()
         def cracknum(self,id):
                 global methods
                 os.system('clear');print(logo)
