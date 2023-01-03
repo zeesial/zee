@@ -401,22 +401,17 @@ class crack_main():
                 print(" \n [*] Ex @gmail.com,@yahoo.com or @hotmail.com etc")
                 domain = input(" Domain : ")
                 print("\n [?] Limit ids Example 1000,5000,50000")
-                try:
-                        limit=int(input(' Put limit: '))
-                except ValueError:
-                        limit = 5000
-                print(50*'=')
-                print(' Getting gmails...')
+                limit = int(input(" Limit Ids : "))
                 lists = ['3','4']
                 for nmbr in range(limit):
                         lchoice = random.choice(lists)
                         if '3' in lchoice:
                                 mail = ''.join(random.choice(string.digits) for _ in range(3))
-                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         else:
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
-                                open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        zee = open('.re.txt', 'r').read().splitlines()
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        zee = open('mail.txt', 'r').read().splitlines()
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(zee))
                         os.system('clear')
