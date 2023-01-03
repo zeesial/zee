@@ -45,46 +45,6 @@ try:
         from Crypto.Cipher import AES, PKCS1_v1_5
         from Crypto.PublicKey import RSA
         from Crypto.Random import get_random_bytes
-except:
-        fbcr = 'Zong'
-fbmf = subprocess.check_output('getprop ro.product.manufacturer',shell=True).decode('utf-8').replace('\n','')
-fbbd = subprocess.check_output('getprop ro.product.brand',shell=True).decode('utf-8').replace('\n','')
-fbdv = model
-fbsv = android_version
-fbca = subprocess.check_output('getprop ro.product.cpu.abilist',shell=True).decode('utf-8').replace(',',':').replace('\n','')
-fbdm = '{density=2.25,height='+subprocess.check_output('getprop ro.hwui.text_large_cache_height',shell=True).decode('utf-8').replace('\n','')+',width='+subprocess.check_output('getprop ro.hwui.text_large_cache_width',shell=True).decode('utf-8').replace('\n','')
-try:
-        fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')
-        total = 0
-        for i in fbcr:
-                total+=1
-        select = ('1','2')
-        if select == '1':
-                fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')[0].replace('\n','')
-                sim_id+=fbcr
-        elif select == '2':
-                try:
-                        fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')[1].replace('\n','')
-                        sim_id+=fbcr
-                except Exception as e:
-                        fbcr = "Zong"
-                        sim_id+=fbcr
-        else:
-                fbcr = 'Zong'
-                sim_id+=fbcr
-except:
-        fbcr = "Zong"
-device = {
-        'android_version':android_version,
-        'model':model,
-        'build':build,
-        'fblc':fblc,
-        'fbmf':fbmf,
-        'fbbd':fbbd,
-        'fbdv':model,
-        'fbsv':fbsv,
-        'fbca':fbca,
-        'fbdm':fbdm}
 
 except Exception as e:
         print(e)
@@ -133,7 +93,46 @@ else:
         pass
 os.system("rm -rf .f1")
 os.system("rm -rf .f2")
-
+except:
+        fbcr = 'Zong'
+fbmf = subprocess.check_output('getprop ro.product.manufacturer',shell=True).decode('utf-8').replace('\n','')
+fbbd = subprocess.check_output('getprop ro.product.brand',shell=True).decode('utf-8').replace('\n','')
+fbdv = model
+fbsv = android_version
+fbca = subprocess.check_output('getprop ro.product.cpu.abilist',shell=True).decode('utf-8').replace(',',':').replace('\n','')
+fbdm = '{density=2.25,height='+subprocess.check_output('getprop ro.hwui.text_large_cache_height',shell=True).decode('utf-8').replace('\n','')+',width='+subprocess.check_output('getprop ro.hwui.text_large_cache_width',shell=True).decode('utf-8').replace('\n','')
+try:
+        fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')
+        total = 0
+        for i in fbcr:
+                total+=1
+        select = ('1','2')
+        if select == '1':
+                fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')[0].replace('\n','')
+                sim_id+=fbcr
+        elif select == '2':
+                try:
+                        fbcr = subprocess.check_output('getprop gsm.operator.alpha',shell=True).decode('utf-8').split(',')[1].replace('\n','')
+                        sim_id+=fbcr
+                except Exception as e:
+                        fbcr = "Zong"
+                        sim_id+=fbcr
+        else:
+                fbcr = 'Zong'
+                sim_id+=fbcr
+except:
+        fbcr = "Zong"
+device = {
+        'android_version':android_version,
+        'model':model,
+        'build':build,
+        'fblc':fblc,
+        'fbmf':fbmf,
+        'fbbd':fbbd,
+        'fbdv':model,
+        'fbsv':fbsv,
+        'fbca':fbca,
+        'fbdm':fbdm}
 logo= f'''
 
 \033[1;35m ________   _______  _______\033[1;37m 
