@@ -408,7 +408,7 @@ class crack_main():
                         naseeb = open('mail.txt','a').write(nmp)
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
-                        linex()
+                print(50*'=')
                         for user in self.id:
                                 first_name = names.rsplit(' ')[0]
                                 try:
