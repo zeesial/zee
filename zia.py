@@ -406,8 +406,7 @@ class crack_main():
                         nmpp = random.randint(111,999)
                         nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
                         naseeb = open('mail.txt','a').write(nmp)
-                        self.id = open(mail.txt).read().splitlines()
-                with ThreadPool(max_workers=30) as formSubmit:
+               with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
                 os.system('clear')
                 print(logo)
@@ -415,6 +414,7 @@ class crack_main():
                 print(' Cloning Is Started Wait For Results')
                 print(' After Every 5 Min Turn Airplane On/Off')
                 print(50*'=')
+                self.id = open(mail.txt).read().splitlines()
                         for user in self.id:
                                 iid,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
