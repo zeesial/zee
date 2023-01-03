@@ -525,9 +525,9 @@ class crack_main():
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+height_)
                 os.system('clear')
                 print(logo)
-                print(' for auto password list type auto or Auto')
+                print(' How many password do you want try?')
                 print(50*"=")
-                pl = input(' How Much Password Do You Want To Add ? ')
+                pl = input(' How Much Password Do You Want To Add : ')
                 if pl in ['auto','Auto','AUTO','auto or Auto']:
                         passlist.append('first123')
                         passlist.append('first12345')
