@@ -456,7 +456,7 @@ class crack_main():
         def m1(self,iid,name,passlist):
                 try:
                         global ok,loop,android_models
-                        sys.stdout.write('\r[QSR] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
+                        sys.stdout.write('\r[ZEE-F] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
                         fn = name.split(' ')[0]
                         try:
                                 ln = name.split(' ')[1]
