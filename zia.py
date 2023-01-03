@@ -408,9 +408,6 @@ class crack_main():
                         naseeb = open('mail.txt','a').write(nmp)
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
-                os.system('clear');print(logo)
-                print(' Total account : \033[1;32m'+total)
-                print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
                         for user in self.id:
                                 first_name = names.rsplit(' ')[0]
