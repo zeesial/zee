@@ -410,7 +410,7 @@ class crack_main():
                         else:
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        uss = open('mail.txt', 'r').read().splitlines()
+                        self.id = open('mail.txt', 'r').read().splitlines()
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
                         clear()
