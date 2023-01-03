@@ -12,8 +12,6 @@ try:
         os.system('rm -rf device_info.txt')
         os.mkdir('crypto')
 except:
-uid = os.getuid()
-except:
         fbcr = 'Zong'
 fbmf = subprocess.check_output('getprop ro.product.manufacturer',shell=True).decode('utf-8').replace('\n','')
 fbbd = subprocess.check_output('getprop ro.product.brand',shell=True).decode('utf-8').replace('\n','')
