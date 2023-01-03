@@ -185,7 +185,7 @@ rp=(f"\033[{holaa};147m")
 loop = 0
 methods = []
 ok=[]
-cp=[]
+cps=[]
 total=[]
 clone_type=[]
 android_models = []
@@ -334,7 +334,7 @@ def login():
                 open("fb_cookies.txt","w").write(cookies)
                 print(' Logged in successfully ...')
                 time.sleep(1)
-                os.system('python malang.py')
+                os.system('python zia.py')
         except KeyError:
                 print('\n Inavlid cookies, try another cookies')
                 exit()
@@ -423,9 +423,8 @@ class crack_main():
                 self.pasw()
         def m1(self,iid,name,passlist):
                 try:
-                        global ok,cp,loop,android_models
+                        global ok,loop,android_models
                         sys.stdout.write('\r[ZEE] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
-                        sys.stdout.write('\r[ZEE] %s / [CP-%s] \r'%(loop,len(cp)));sys.stdout.flush()
                         fn = name.split(' ')[0]
                         try:
                                 ln = name.split(' ')[1]
