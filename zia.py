@@ -433,14 +433,6 @@ class crack_main():
                         for pw in passlist:
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
                                 infos = open('device_info.txt','r').read()
-                                try:
-                                        version_,model_,brand_name_,width_,height_=infos.split('$')
-                                except:
-                                        version_ = str(random.randint(7,13))
-                                        model_ = "Infinix"
-                                        brand_name_ = "Infinix"
-                                        width_ = "720"
-                                        height_ = "1280"
                                 fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
                                 fbbv = str(random.randint(111111111,999999999))
                                 android_version = device['android_version']
