@@ -415,7 +415,7 @@ class crack_main():
                 print(' Cloning Is Started Wait For Results')
                 print(' After Every 5 Min Turn Airplane On/Off')
                 print(50*'=')
-                         for user in self.id:
+                for user in self.id:
                          iid,names = user.split('|')
                          first_name = names.rsplit(' ')[0]
                          try:
