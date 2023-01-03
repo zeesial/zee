@@ -476,7 +476,7 @@ class crack_main():
                         except:
                                 ln = fn
                         for pw in passlist:
-                                pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
+                                pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',names).replace('name',names.lower())
                                 infos = open('device_info.txt','r').read()
                                 fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
                                 fbbv = str(random.randint(111111111,999999999))
