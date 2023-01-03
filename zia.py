@@ -389,7 +389,7 @@ class crack_main():
                 except FileNotFoundError:
                         print(' No file found ....')
                         exit()
-        def crackmail(zee,id):
+        def crackmail(zee,self,id):
                 global methods
                 os.system("clear");print(logo)
                 import requests,random
