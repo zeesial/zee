@@ -402,7 +402,6 @@ class crack_main():
                 domain = input(" Domain : ")
                 print("\n [?] Limit ids Example 1000,5000,50000")
                 limit = int(input(" Limit Ids : "))
-                self.id = open(mail.txt).read().splitlines()
                 for nmbr in range(limit):
                         nmpp = random.randint(111,999)
                         nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
