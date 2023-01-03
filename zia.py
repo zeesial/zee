@@ -562,6 +562,8 @@ class crack_main():
                 print(50*"=")
                 print(' Example first123,last123,khan123,firstlast')
                 print(50*"=")
+                pl = input(' Type Here password ')
+                print(50*"=")
                 for cd in range(int(pl)):
                         passlist.append(input(f' ({cd+1}) Password : '))
                 os.system('clear')
