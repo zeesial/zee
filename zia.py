@@ -417,7 +417,7 @@ class crack_main():
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
-                        
+                        for user in self.id:
                                 first_name = names.rsplit(' ')[0]
                                 try:
                                         last_name = names.rsplit(' ')[1]
@@ -433,7 +433,6 @@ class crack_main():
                 print(' After Every 5 Min Turn Airplane On/Off')
                 print(50*'=')
                 with ThreadPool(max_workers=30) as formSubmit:
-                        for user in self.id:
                                 iid,name = user.split('|')
                                 formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
