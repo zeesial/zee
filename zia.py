@@ -402,12 +402,12 @@ class crack_main():
                 domain = input(" Domain : ")
                 print("\n [?] Limit ids Example 1000,5000,50000")
                 limit = int(input(" Limit Ids : "))
+                self.id = open(mail.txt).read().splitlines()
                 for nmbr in range(limit):
                         nmpp = random.randint(111,999)
                         nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
                         naseeb = open('mail.txt','a').write(nmp)
-               with ThreadPool(max_workers=30) as formSubmit:
-                        self.id = open(mail.txt).read().splitlines()
+                with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(self.id))
                 os.system('clear')
                 print(logo)
