@@ -411,7 +411,7 @@ class crack_main():
                         else:
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('.re.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        fo = open('.re.txt', 'r').read().splitlines()
+                        zee = open('.re.txt', 'r').read().splitlines()
                 with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(zee))
                 os.system('clear')
