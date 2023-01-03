@@ -395,13 +395,27 @@ class crack_main():
                 import requests,random
                 user=[]
                 passlist = []
-                print(" [*] First Name Example Hamza,Areesha")
+                print(50*'=')
+                print(" [*] First Name Example ahmad,arsalan")
+                print(50*'=')
                 first = input(" First Name : ")
+                print(50*'=')
+                print(" [*] Last Name Example ali,arshad")
+                print(50*'=')
                 last = input(" Last Name : ")
+                print(50*'=')
                 print(" \n [*] Ex @gmail.com,@yahoo.com or @hotmail.com etc")
+                print(50*'=')
                 domain = input(" Domain : ")
+                print(50*'=')
                 print("\n [?] Limit ids Example 1000,5000,50000")
-                limit = int(input(" Limit Ids : "))
+                print(50*'=')
+                try:
+                        limit=int(input(' Put limit: '))
+                except ValueError:
+                        limit = 5000
+                print(50*'=')
+                print(' Getting gmails...')
                 lists = ['3','4']
                 for nmbr in range(limit):
                         lchoice = random.choice(lists)
@@ -421,10 +435,10 @@ class crack_main():
                         print(' After Every 5 Min Turn Airplane On/Off')
                         print(50*'=')
                         for user in zee:
-                                iid,names = user.split('|')
-                                first_name = names.rsplit(' ')[0]
+                                iid,name = user.split('|')
+                                first_name = name.rsplit(' ')[0]
                                 try:
-                                        last_name = names.rsplit(' ')[1]
+                                        last_name = name.rsplit(' ')[1]
                                 except IndexError:
                                         last_name = 'Khan'
                                 fs = first_name.lower()
