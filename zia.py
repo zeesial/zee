@@ -203,6 +203,7 @@ loop = 0
 methods = []
 ok=[]
 cps=[]
+twf=[]
 total=[]
 clone_type=[]
 android_models = []
@@ -461,7 +462,7 @@ class crack_main():
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
-                print(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
+                print(' Total OK/CP/2F: '+str(len(ok))+'/'+str(len(cps))+'/'+str(len(twf)))
                 linex()
                 input(' Press enter to back ')
                 os.system('python zia.py')
