@@ -513,7 +513,7 @@ class crack_main():
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
-                        for user in fo:
+                        for user in self.id:
                                 iid,name = user.split('|')
                                 first_name = name.rsplit(' ')[0]
                                 try:
