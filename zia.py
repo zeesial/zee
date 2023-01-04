@@ -501,7 +501,7 @@ class crack_main():
                 except Exception as e:
                         pass
                         #print(e)
-        def rndm(self,iid,name,passlist):
+def rndm(self,iid,name,passlist):
         global loop
         global ok
         sys.stdout.write('\r[ZEE-F] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
