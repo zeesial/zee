@@ -636,7 +636,7 @@ class crack_main():
                                                 print('\r\r\033[1;32m [ZEE-OK] '+str(uid)+' | '+pas+'\033[1;97m')
                                                 open('/sdcard/zee_ok.txt','a').write(str(uid)+'|'+pas+'\n')
                                                 oks.append(str(uid))
-                                         break
+                                                break
                                 elif 'www.facebook.com' in po['error']['message']:
                                         try:
                                                 uid = po['error']['error_data']['uid']
