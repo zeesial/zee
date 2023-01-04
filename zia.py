@@ -206,7 +206,11 @@ cps=[]
 total=[]
 clone_type=[]
 android_models = []
-
+def linex():
+        print('\033[1;37m----------------------------------------------')
+def clear():
+        os.system('clear')
+        print(logo)
 def main():
         os.system('rm -rf ...txt')
         os.system('clear')
@@ -407,7 +411,7 @@ class crack_main():
                         print(' No file found ....')
                         exit()
         def crackmail(self,id):
-                os.system('rm -rf .re.txt')
+                os.system('rm -rf mail.txt')
                 clear()
                 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
                 linex()
