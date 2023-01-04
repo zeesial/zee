@@ -645,7 +645,7 @@ def rndm(self,iid,name,passlist):
                 with ThreadPool(max_workers=30) as formSubmit:
                         for user in self.id:
                                 iid,name = user.split('|')
-                                formSubmit.submit(self.m1,iid,name,passlist)
+                                formSubmit.submit(self.rndm,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
