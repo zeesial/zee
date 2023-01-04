@@ -406,7 +406,7 @@ class crack_main():
                 except FileNotFoundError:
                         print(' No file found ....')
                         exit()
-        def gmail():
+        def crackmail(self,id):
                 os.system('rm -rf .re.txt')
                 clear()
                 print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
