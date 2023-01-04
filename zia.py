@@ -554,7 +554,7 @@ class crack_main():
                         for cd in range(int(pl)):
                                 passlist.append(input(f' ({cd+1}) Password : '))
                 os.system('clear')
-                print(logo);xchker()
+                print(logo)
                 print(' Total Ids : '+str(len(self.id)))
                 print(' Cloning Is Started Wait For Results')
                 print(' After Every 5 Min Turn Airplane On/Off')
