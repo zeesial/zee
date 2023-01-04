@@ -531,7 +531,7 @@ class crack_main():
                         density_=input(" density : ")
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
                 os.system('clear')
-                print(logo);xchker()
+                print(logo)
                 print(' How many password do you want try?')
                 print(50*"-")
                 pl = input(' How Much Password Do You Want To Add ? ')
