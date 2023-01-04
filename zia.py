@@ -429,19 +429,14 @@ class crack_main():
                         limit=int(input(' Put limit: '))
                 except ValueError:
                         limit = 5000
-                linex()
+                print(50*'=')
                 print(' Getting gmails...')
-                lists = ['3','4']
-                for xd in range(limit):
-                        lchoice = random.choice(lists)
-                        if '3' in lchoice:
-                                mail = ''.join(random.choice(string.digits) for _ in range(3))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        else:
-                                mail = ''.join(random.choice(string.digits) for _ in range(4))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        self.id = open('mail.txt').read().splitlines()
-                        self.pasw()
+                for nmbr in range(limit):
+                        nmpp = random.randint(99,9999)
+                        nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
+                        naseeb = open('mail.txt','a').write(nmp)
+                self.id = open('mail.txt').read().splitlines()
+                self.pasw()
         def cracknum(self,id):
                 global methods
                 os.system('clear');print(logo)
