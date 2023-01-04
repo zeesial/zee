@@ -448,10 +448,10 @@ class crack_main():
                         print("\033[1;37m \x1b[38;5;208mUse flight mode for speed up\033[1;37m")
                         linex()
                         for user in fo:
-                                ids,names = user.split('|')
-                                first_name = names.rsplit(' ')[0]
+                                iids,name = user.split('|')
+                                first_name = name.rsplit(' ')[0]
                                 try:
-                                        last_name = names.rsplit(' ')[1]
+                                        last_name = name.rsplit(' ')[1]
                                 except IndexError:
                                         last_name = 'Khan'
                                 fs = first_name.lower()
