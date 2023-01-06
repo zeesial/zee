@@ -535,7 +535,7 @@ def pasw():
                         brrand_name_ = "Infinix"
                         wiidth_ = "720"
                         heeight_ = "1280"
-                        uas = 'Davik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/'+build_+') [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.katana;FBLC/th_TH;FBBV/135374479;FBCR/'+operator_+';FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+model_+';FBSV/'+version_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density='+density_+',width='+width_+',height='+height_+'};FB_FW/1;]'
+                        uas = 'Davik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/8BFOHT) [FBAN/FB4A;FBAV/92.866.944.616;FBPN/com.facebook.katana;FBLC/en_US;FBBV/322216925;FBCR/null;FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+brand_name_+';FBSV/'+brand_name_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.25,width='+width_+',height='+height_+'};]'
                         print(uas)        
                 
                 print(50*"-")
