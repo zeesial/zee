@@ -530,12 +530,12 @@ def pasw():
                 try:
                         version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
                 except:
-                        version_ = str(random.randint(7,13))
-                        model_ = "Infinix"
-                        brand_name_ = "Infinix"
-                        width_ = "720"
-                        height_ = "1280"
-                        uas = 'Dalvik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/'+build_+') [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/'+operator_+';FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+model_+';FBSV/'+version_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density='+density_+',width='+width_+',height='+height_+'};FB_FW/1;]'
+                        veersion_ = str(random.randint(7,13))
+                        moodel_ = "Infinix"
+                        brrand_name_ = "Infinix"
+                        wiidth_ = "720"
+                        heeight_ = "1280"
+                        uas = 'Davik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/'+build_+') [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.katana;FBLC/th_TH;FBBV/135374479;FBCR/'+operator_+';FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+model_+';FBSV/'+version_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density='+density_+',width='+width_+',height='+height_+'};FB_FW/1;]'
                         print(uas)        
                 
                 print(50*"-")
