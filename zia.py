@@ -495,7 +495,7 @@ class crack_main():
                 except Exception as e:
                         pass
                         #print(e)
-        def pasw():
+def pasw():
                 passlist = []
                 if not os.path.exists('device_info.txt'):
                         os.system('clear')
