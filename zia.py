@@ -213,16 +213,12 @@ def main():
         print(logo)
         print('Its only for personal Use')
         print(50*'=')
-        print('[1] Fb Cloning Menu')
-        print('[2] File Create Menu')
-        print('[3] Remove Cookie')
-        print('[4] Clear Cache')
-        print('[5] Best Pass Lists \033[0;97m')
+        print('[1] Useragent maker')
         print('[0] Exit \033[0;97m')
         print(50*'=')
         menu_opt = input('Select choice : ')
         if menu_opt =='1':
-                method_crack()
+                pasw()
         elif menu_opt =='2':
                 create_file()
         elif menu_opt =='13':
@@ -365,9 +361,7 @@ def login():
 def method_crack():
         os.system('clear')
         print(logo)
-        print(' [1] File Cloning ')
-        print(' [2] Email Cloning ')
-        print(' [3] Number Cloning ')
+        print(' [1] Useragent ')
         print(' [0] Back')
         print(50*'=')
         clone_ = input(' Select : ')
@@ -501,7 +495,7 @@ class crack_main():
                 except Exception as e:
                         pass
                         #print(e)
-        def pasw(self):
+        def pasw():
                 passlist = []
                 if not os.path.exists('device_info.txt'):
                         os.system('clear')
@@ -532,42 +526,19 @@ class crack_main():
                         info_file = open("device_info.txt","a").write(version_+'$'+model_+'$'+brand_name_+'$'+width_+'$'+build_+'$'+operator_+'$'+density_)
                 os.system('clear')
                 print(logo)
-                print(' How many password do you want try?')
+                infos = open('device_info.txt','r').read()
+                try:
+                        version_,model_,brand_name_,width_,height_,build_,operator_,density_=infos.split('$')
+                except:
+                        version_ = str(random.randint(7,13))
+                        model_ = "Infinix"
+                        brand_name_ = "Infinix"
+                        width_ = "720"
+                        height_ = "1280"
+                 uas = 'Dalvik/2.1.0 (Linux; U; Android '+version_+'.0.0; '+model_+' Build/'+build_+') [FBAN/Orca-Android;FBAV/196.0.0.29.99;FBPN/com.facebook.orca;FBLC/th_TH;FBBV/135374479;FBCR/'+operator_+';FBMF/'+brand_name_+';FBBD/'+brand_name_+';FBDV/'+model_+';FBSV/'+version_+'.0.0;FBCA/armeabi-v7a:armeabi;FBDM/{density='+density_+',width='+width_+',height='+height_+'};FB_FW/1;]'
+                                
+                print(uas)
                 print(50*"-")
-                pl = input(' How Much Password Do You Want To Add ? ')
-                if pl in ['auto','Auto','AUTO','auto or Auto']:
-                        passlist.append('first123')
-                        passlist.append('first12345')
-                        passlist.append('first1234')
-                        passlist.append('khan12')
-                        passlist.append('khankhan')
-                        passlist.append('khan123')
-                        passlist.append('first786')
-                        passlist.append('first12')
-                        passlist.append('first1122')
-                        passlist.append('last123')
-                        passlist.append('last12')
-                        passlist.append('i love you')
-                else:
-                        print(' Example first123,last123,khan123,firstlast')
-                        print(50*"-")
-                        for cd in range(int(pl)):
-                                passlist.append(input(f' ({cd+1}) Password : '))
-                os.system('clear')
-                print(logo)
-                print(' Total Ids : '+str(len(self.id)))
-                print(' Cloning Is Started Wait For Results')
-                print(' After Every 5 Min Turn Airplane On/Off')
-                print(50*'-')
-                with ThreadPool(max_workers=30) as formSubmit:
-                        for user in self.id:
-                                iid,name = user.split('|')
-                                formSubmit.submit(self.m1,iid,name,passlist)
-                print(50*'=')
-                print(' SucessFully Process Is Completed ')
-                print(' Total Ok Ids : '+str(len(ok)))
-                print(' Ok Ids Save In : /sdcard/zee_ok.txt')
-                print(50*'=')
                 input('\n Press enter to back ')
                 main()
       
